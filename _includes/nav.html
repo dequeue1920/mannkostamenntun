@@ -1,0 +1,77 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand py-2" href="/">
+            <img src="/assets/images/logo.png" alt="Mannkostamenntun logo" height="50">
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNav" 
+                aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse" id="primaryNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link px-3 {% if page.url == '/' %}active{% endif %}" href="/">
+                        <i class="fas fa-home d-lg-none me-2"></i>Heim
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 {% if page.url contains '/about' %}active{% endif %}" href="/about.html">
+                        <i class="fas fa-info-circle d-lg-none me-2"></i>Yfirlit
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 {% if page.url contains '/courses' %}active{% endif %}" href="/courses.html">
+                        <i class="fas fa-book d-lg-none me-2"></i>Kennsluefni
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 {% if page.url contains '/portfolio' %}active{% endif %}" href="/portfolio.html">
+                        <i class="fas fa-graduation-cap d-lg-none me-2"></i>Mannkostamenntun
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 {% if page.url contains '/pricing' %}active{% endif %}" href="/pricing.html">
+                        <i class="fas fa-book-open d-lg-none me-2"></i>Bækur
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 {% if page.url contains '/contact' %}active{% endif %}" href="/contact.html">
+                        <i class="fas fa-envelope d-lg-none me-2"></i>Tengslaupplýsingar
+                    </a>
+                </li>
+                
+                <!-- Language Switcher -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-globe d-lg-none me-2"></i>
+                        <span class="d-lg-none">Tungumál</span>
+                        <span class="d-none d-lg-inline">{{ page.lang | upcase }}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+                        <li>
+                            <a class="dropdown-item {% if page.lang == 'is' %}active{% endif %}" 
+                               href="{{ page.url | replace: '_en.html', '.html' }}">
+                                Íslenska
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item {% if page.lang == 'en' %}active{% endif %}" 
+                               href="{{ page.url | replace: '.html', '_en.html' }}">
+                                English
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Spacer for fixed navbar -->
+<div class="navbar-spacing" style="height: 76px;"></div>

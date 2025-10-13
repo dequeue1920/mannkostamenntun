@@ -12,6 +12,7 @@
 <link href="css/jcarousel.css" rel="stylesheet" />
 <link href="css/flexslider.css" rel="stylesheet" />
 <link href="css/style.css" rel="stylesheet" />
+<link href="css/components/responsive-images.css" rel="stylesheet" />
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -32,7 +33,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                  	<a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+                  	<a class="navbar-brand" href="index.html">
+                        <img 
+                            src="img/logo.png" 
+                            alt="Mannkostamenntun logo" 
+                            data-responsive-image 
+                            data-lazy="false"
+                            class="logo-img"/>
+                    </a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
@@ -75,7 +83,12 @@
 							
 						 <div class="row">
 							<div class="col-md-6">
-								<img src="img/yfirlit.png" alt="">
+                                <img 
+                                    src="img/yfirlit.png" 
+                                    alt="Yfirlit yfir kennslustundir og innihald þeirra" 
+                                    data-responsive-image
+                                    class="responsive-img fade-in"
+                                    data-sizes="(max-width: 768px) 100vw, 50vw"/>
 								<div class="space"></div>
 							</div>
 							<div class="col-md-6">
@@ -228,7 +241,12 @@ um mannkosti og dygðir við Háskólann í Birmingham.</p>
 									<!-- Team Member -->
 									<a href="https://lifeworthliving.is/lif-sem-er-lifsia-og-stjornendur/"><div class="team-member">
 										<!-- Image -->
-										<img class="img-responsive" src="img/líf sem er lífsins virði.jpg" alt="">
+										<img 
+                                            src="img/líf sem er lífsins virði.jpg" 
+                                            alt="Líf sem er lífsins virði - forsíðumynd" 
+                                            data-responsive-image
+                                            class="card-img fade-in"
+                                            data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw">
 										<!-- Name -->
 										<h4>Líf sem er lífsins virði</h4>
 										<span class="deg">Að hugsa um kennara og stjórnendur</span> 
@@ -236,9 +254,14 @@ um mannkosti og dygðir við Háskólann í Birmingham.</p>
 								</div>
 								<div class="col-md-3 col-sm-6">
 									<!-- Team Member -->
-									<a href="https://sites.google.com/view/leysum-malin/heim?fbclid=IwAR0DIbfVmFpF2HymxIFjH3nj-76w_6ru8-lH58qgFAqEGP6F2Lx10XBZj98"><div class="team-member">
+									<a href="https://sites.google.com/view/leysum-malin/heim"><div class="team-member">
 										<!-- Image -->
-										<img class="img-responsive" src="img/leysum málin.png" alt="">
+										<img 
+                                            src="img/leysum málin.png" 
+                                            alt="Leysum málin - verkefni" 
+                                            data-responsive-image
+                                            class="card-img fade-in"
+                                            data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw">
 										<!-- Name -->
 										<h4>Leysum málin!</h4>
 										<span class="deg">Lausnamiðuð nálgun til að styrkja sjálfsmyndina</span> 
@@ -248,7 +271,12 @@ um mannkosti og dygðir við Háskólann í Birmingham.</p>
 									<!-- Team Member -->
 									<a href="https://menntastefna.is/verkfaerakista/"><div class="team-member">
 										<!-- Image -->
-										<img class="img-responsive" src="img/menntastefna reykjavíkur.png" alt="">
+										<img 
+                                            src="img/menntastefna reykjavíkur.png" 
+                                            alt="Menntastefna Reykjavíkur - verkfærakista" 
+                                            data-responsive-image
+                                            class="card-img fade-in"
+                                            data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw">
 										<!-- Name -->
 										<h4>Menntastefna Reykjavíkur</h4>
 										<span class="deg">Verkfærakista</span> 
@@ -258,7 +286,12 @@ um mannkosti og dygðir við Háskólann í Birmingham.</p>
 									<!-- Team Member -->
 									<a href="https://mms.is/namsefni/hvad-heldur-thu-um-gagnryna-hugsun-kennsluleidbeiningar"><div class="team-member">
 										<!-- Image -->
-										<img class="img-responsive" src="img/hvað heldur þú.jpg" alt="">
+										<img 
+                                            src="img/hvað heldur þú.jpg" 
+                                            alt="Hvað heldur þú? - kennsluefni um gagnrýna hugsun" 
+                                            data-responsive-image
+                                            class="card-img fade-in"
+                                            data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw">
 										<!-- Name -->
 										<h4>Hvað heldur þú?</h4>
 										<span class="deg">Um gagnrýna hugsun - kennsluleiðbeiningar og námsefni</span> 

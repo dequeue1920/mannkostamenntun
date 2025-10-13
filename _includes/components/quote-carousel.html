@@ -1,0 +1,53 @@
+{% assign carousel_id = include.id | default: "quoteCarousel" %}
+
+<div id="{{ carousel_id }}" class="carousel slide" data-bs-ride="carousel">
+    {% if include.title %}
+    <h2 class="text-center mb-4">{{ include.title }}</h2>
+    {% endif %}
+    
+    <div class="carousel-inner">
+        {% for quote in include.quotes %}
+        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <figure class="text-center">
+                            {% if quote.image %}
+                            <img src="{{ quote.image }}" class="rounded-circle mb-3" width="80" height="80" 
+                                 alt="{{ quote.author }}">
+                            {% endif %}
+                            <blockquote class="blockquote">
+                                <p class="mb-0">{{ quote.text }}</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer mt-2">
+                                {{ quote.author }}
+                                {% if quote.title %}<cite title="{{ quote.title }}">{{ quote.title }}</cite>{% endif %}
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    {% if include.quotes.size > 1 %}
+    <button class="carousel-control-prev" type="button" data-bs-target="#{{ carousel_id }}" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#{{ carousel_id }}" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    
+    <div class="carousel-indicators">
+        {% for quote in include.quotes %}
+        <button type="button" data-bs-target="#{{ carousel_id }}" data-bs-slide-to="{{ forloop.index0 }}" 
+                {% if forloop.first %}class="active" aria-current="true"{% endif %}
+                aria-label="Slide {{ forloop.index }}">
+        </button>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>

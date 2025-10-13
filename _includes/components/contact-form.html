@@ -1,0 +1,169 @@
+<!-- Contact Form with CSRF Protection -->
+<form action="/api/contact" method="POST" class="needs-validation" novalidate>
+    <input type="hidden" name="_csrf" value="{{ csrf_token }}">
+    
+    <div class="row g-3">
+        <!-- Name Field -->
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" 
+                       class="form-control" 
+                       id="name" 
+                       name="name" 
+                       placeholder="Full Name" 
+                       required
+                       pattern="[A-Za-z\s]+"
+                       aria-label="Full Name">
+                <label for="name">Full Name</label>
+                <div class="invalid-feedback">
+                    Please enter your name using only letters and spaces.
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="email" 
+                       class="form-control" 
+                       id="email" 
+                       name="email" 
+                       placeholder="Email Address" 
+                       required
+                       aria-label="Email Address">
+                <label for="email">Email Address</label>
+                <div class="invalid-feedback">
+                    Please enter a valid email address.
+                </div>
+            </div>
+        </div>
+
+        <!-- Subject Field -->
+        <div class="col-12">
+            <div class="form-floating">
+                <input type="text" 
+                       class="form-control" 
+                       id="subject" 
+                       name="subject" 
+                       placeholder="Subject" 
+                       required
+                       aria-label="Subject">
+                <label for="subject">Subject</label>
+                <div class="invalid-feedback">
+                    Please enter a subject for your message.
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Field -->
+        <div class="col-12">
+            <div class="form-floating">
+                <textarea class="form-control" 
+                          id="message" 
+                          name="message" 
+                          placeholder="Your Message" 
+                          style="height: 150px" 
+                          required
+                          aria-label="Your Message"></textarea>
+                <label for="message">Your Message</label>
+                <div class="invalid-feedback">
+                    Please enter your message.
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-12">
+            <button class="btn btn-primary w-100 py-3" type="submit">
+                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                <span class="btn-text">Send Message</span>
+            </button>
+        </div>
+    </div>
+</form>
+
+<!-- Form Validation Script -->
+<script>
+(function() {
+    'use strict';
+
+    const forms = document.querySelectorAll('.needs-validation');
+    const submitButtons = document.querySelectorAll('button[type="submit"]');
+
+    // Get CSRF token from meta tag
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
+    // Form submission handler
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        
+        if (!form.checkValidity()) {
+            event.stopPropagation();
+            form.classList.add('was-validated');
+            return;
+        }
+
+        const button = form.querySelector('button[type="submit"]');
+        const spinner = button.querySelector('.spinner-border');
+        const btnText = button.querySelector('.btn-text');
+
+        // Show loading state
+        button.disabled = true;
+        spinner.classList.remove('d-none');
+        btnText.textContent = 'Sending...';
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRF-Token': csrfToken
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            // Show success message
+            form.reset();
+            form.classList.remove('was-validated');
+            showAlert('success', 'Message sent successfully!');
+
+        } catch (error) {
+            showAlert('danger', 'Failed to send message. Please try again.');
+        } finally {
+            // Reset button state
+            button.disabled = false;
+            spinner.classList.add('d-none');
+            btnText.textContent = 'Send Message';
+        }
+    }
+
+    // Add submit handlers to all forms
+    forms.forEach(form => {
+        form.addEventListener('submit', handleSubmit);
+    });
+
+    // Alert helper function
+    function showAlert(type, message) {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+        alertDiv.role = 'alert';
+        alertDiv.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+        
+        const form = document.querySelector('form');
+        form.parentNode.insertBefore(alertDiv, form);
+
+        // Auto dismiss after 5 seconds
+        setTimeout(() => {
+            alertDiv.remove();
+        }, 5000);
+    }
+})();
+</script>

@@ -2,6 +2,9 @@
 jQuery(document).ready(function($) {
 "use strict";
 
+// Initialize responsive images (will be handled by main.js)
+window.initResponsiveImages && window.initResponsiveImages();
+
 	
 		//add some elements with animate effect
 

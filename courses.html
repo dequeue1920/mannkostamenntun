@@ -12,6 +12,7 @@
 <link href="css/jcarousel.css" rel="stylesheet" />
 <link href="css/flexslider.css" rel="stylesheet" />
 <link href="css/style.css" rel="stylesheet" />
+<link href="css/components/responsive-images.css" rel="stylesheet" />
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -32,7 +33,14 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+                    <a class="navbar-brand" href="index.html">
+                        <img 
+                            src="img/logo.png" 
+                            alt="Mannkostamenntun logo" 
+                            data-responsive-image 
+                            data-lazy="false"
+                            class="logo-img"/>
+                    </a>
                 </div>
                 <div class="navbar-collapse collapse ">
                     <ul class="nav navbar-nav">
@@ -142,7 +150,12 @@ geðshræringar. Ef til vill hefði réttnefni mannkostamenntunar verið siðmen
 </p> </br>
         <div class="row service-v1 margin-bottom-40">
             <div class="col-md-4 md-margin-bottom-40">
-               <img class="img-responsive" src="img/service1.jpg" alt="">   
+               <img 
+                    src="img/service1.jpg" 
+                    alt="Mannkostamenntun - myndskreyting" 
+                    data-responsive-image
+                    class="card-img fade-in"
+                    data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 33vw">
                 <h3>Mannkostamenntun</h3>
                 <p>Mannkostamenntun á rætur að rekja til grískrar heimspeki. Sókrates er gjarnan talinn upphafsmaður
 vestrænnar siðfræði sem er tilraun til að veita innsýn í hvernig breytni manna lýsir
@@ -152,12 +165,22 @@ kennsluaðferðarinnar sem fyrir finnst enn þann dag í dag (Sigurður Nordal, 
 </p>        
             </div>
             <div class="col-md-4">
-                <img class="img-responsive" src="img/service2.jpg" alt="">            
+                <img 
+                    src="img/service2.jpg" 
+                    alt="Hæfniviðmið - myndskreyting" 
+                    data-responsive-image
+                    class="card-img fade-in"
+                    data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 33vw">
                 <h3>Hæfniviðmið</h3>
                 <p>Hæfniviðmið eru skilgreiningar á færni, þekkingu og viðhorfum sem nemendur eiga að ná við lok náms, sem styður við skipulagningu náms, kennslu og mats.</p>        
             </div>
             <div class="col-md-4 md-margin-bottom-40">
-              <img class="img-responsive" src="img/service3.jpg" alt="">  
+              <img 
+                    src="img/service3.jpg" 
+                    alt="Námsmat - myndskreyting" 
+                    data-responsive-image
+                    class="card-img fade-in"
+                    data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 33vw">
                 <h3>Námsmat</h3>
                 <p>Námsmat er tæki til að meta að hve miklu leyti nemandi hafi náð hæfniviðmiðum námsþattar.</p>        
             </div>

@@ -1,0 +1,38 @@
+# Site settings
+title: Mannkostamenntun
+description: Mannkostamenntun og efling dygða í gegnum ljóðmennt
+baseurl: ""
+url: ""
+
+# Language settings
+default_lang: "is"
+languages:
+  - code: "is"
+    name: "Íslenska"
+  - code: "en"
+    name: "English"
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# Collections
+collections:
+  courses:
+    output: true
+    permalink: /courses/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "page"
+  - scope:
+      path: "index.html"
+    values:
+      layout: "home"
+  - scope:
+      path: "*_en.html"
+    values:
+      lang: "en"

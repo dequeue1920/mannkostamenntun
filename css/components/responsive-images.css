@@ -1,0 +1,156 @@
+/* Responsive Image System Styles */
+
+/* Base image styles */
+.responsive-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #f0f0f0; /* Placeholder color */
+}
+
+/* Loading states and animations */
+.img-loading {
+    position: relative;
+    background: #f0f0f0;
+    overflow: hidden;
+}
+
+.img-loading::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%
+    );
+    animation: loading-shimmer 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Progressive loading with blur-up */
+.img-placeholder {
+    filter: blur(10px);
+    transform: scale(1.1);
+    transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: filter, transform;
+}
+
+.img-placeholder.loaded {
+    filter: blur(0);
+    transform: scale(1);
+}
+
+/* Component-specific styles */
+.hero-img {
+    height: min(60vh, 600px);
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.card-img:hover {
+    transform: scale(1.02);
+}
+
+.profile-img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img {
+    height: auto;
+    width: auto;
+    max-height: 50px;
+    max-width: 200px;
+}
+
+.thumbnail-img {
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/* Picture element styles */
+picture {
+    display: block;
+    line-height: 0;
+    background: inherit;
+}
+
+picture source {
+    display: block;
+}
+
+/* Fade in animation */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
+}
+
+.fade-in.loaded {
+    opacity: 1;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .img-loading::before,
+    .img-placeholder,
+    .card-img,
+    .fade-in {
+        transition: none;
+        animation: none;
+    }
+    
+    .card-img:hover {
+        transform: none;
+    }
+}
+
+/* Loading animation */
+@keyframes loading-shimmer {
+    100% {
+        left: 100%;
+    }
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .hero-img {
+        height: min(50vh, 400px);
+    }
+    
+    .card-img {
+        aspect-ratio: 3/2;
+    }
+    
+    .profile-img {
+        max-width: 120px;
+        margin: 0 auto;
+    }
+}
+
+/* High contrast mode support */
+@media (forced-colors: active) {
+    .card-img,
+    .profile-img {
+        border: 1px solid CanvasText;
+    }
+    
+    .img-loading::before {
+        display: none;
+    }
+}

@@ -1,0 +1,51 @@
+<!-- Multilingual Breadcrumbs Component -->
+<nav class="breadcrumbs" aria-label="{{ translations[currentLanguage].breadcrumbsLabel }}">
+    <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <!-- Home link -->
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/{{ currentLanguage !== defaultLanguage ? currentLanguage : '' }}"
+               itemprop="item"
+               aria-label="{{ translations[currentLanguage].homeLabel }}">
+                <span itemprop="name">{{ translations[currentLanguage].home }}</span>
+            </a>
+            <meta itemprop="position" content="1" />
+        </li>
+        
+        <!-- Dynamic breadcrumbs -->
+        {% for crumb in breadcrumbs %}
+        <li class="breadcrumb-item {% if loop.last %}active{% endif %}"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+            {% if loop.last %}aria-current="page"{% endif %}>
+            {% if not loop.last %}
+            <a href="{{ crumb.url }}"
+               itemprop="item"
+               lang="{{ currentLanguage }}"
+               hreflang="{{ currentLanguage }}">
+                <span itemprop="name">{{ crumb.title }}</span>
+            </a>
+            {% else %}
+            <span itemprop="name">{{ crumb.title }}</span>
+            {% endif %}
+            <meta itemprop="position" content="{{ loop.index + 1 }}" />
+        </li>
+        {% endfor %}
+    </ol>
+
+    <!-- Keyboard navigation menu -->
+    <div class="breadcrumb-menu visually-hidden"
+         role="menu"
+         aria-label="{{ translations[currentLanguage].breadcrumbsMenuLabel }}">
+        {% for crumb in breadcrumbs %}
+        <a href="{{ crumb.url }}"
+           role="menuitem"
+           tabindex="-1"
+           lang="{{ currentLanguage }}"
+           hreflang="{{ currentLanguage }}"
+           class="breadcrumb-menu-item">
+            {{ crumb.title }}
+        </a>
+        {% endfor %}
+    </div>
+</nav>
