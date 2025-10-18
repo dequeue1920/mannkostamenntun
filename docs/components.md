@@ -1,4 +1,4 @@
-# Component Documentation
+# Component Documentation # Adding a manual comment to run a git commit 18 October 2025
 
 ## Table of Contents
 1. [Navigation](#navigation)
