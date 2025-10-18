@@ -11,10 +11,7 @@
 
 ### Usage
 ```html
-{% include "nav.html" with {
-    "activeItem": "home",
-    "showLanguageSwitcher": true
-} %}
+{% include nav.html activeItem='home' showLanguageSwitcher='true' %}
 ```
 
 ### Properties
@@ -31,13 +28,7 @@
 
 ### Usage
 ```html
-{% include "hero.html" with {
-    "title": "Main Title",
-    "subtitle": "Optional subtitle",
-    "background": "/path/to/image.jpg",
-    "ctaText": "Learn More",
-    "ctaUrl": "/learn-more"
-} %}
+{% include hero.html title='Main Title' subtitle='Optional subtitle' background='/path/to/image.jpg' ctaText='Learn More' ctaUrl='/learn-more' %}
 ```
 
 ### Properties
@@ -57,13 +48,7 @@
 
 ### Usage
 ```html
-{% include "card.html" with {
-    "title": "Card Title",
-    "content": "Card content here",
-    "image": "/path/to/image.jpg",
-    "imageAlt": "Description of image",
-    "link": "/card-link"
-} %}
+{% include card.html title='Card Title' content='Card content here' image='/path/to/image.jpg' imageAlt='Description of image' link='/card-link' %}
 ```
 
 ### Properties
@@ -83,11 +68,7 @@
 
 ### Usage
 ```html
-{% include "contact-form.html" with {
-    "submitUrl": "/api/contact",
-    "successMessage": "Message sent!",
-    "errorMessage": "Please try again"
-} %}
+{% include contact-form.html submitUrl='/api/contact' successMessage='Message sent!' errorMessage='Please try again' %}
 ```
 
 ### Properties
@@ -111,13 +92,7 @@
 
 ### Usage
 ```html
-{% include "language-switcher.html" with {
-    "currentLang": "is",
-    "languages": [
-        {"code": "is", "name": "Íslenska", "url": "/is/page"},
-        {"code": "en", "name": "English", "url": "/en/page"}
-    ]
-} %}
+{% include language-switcher.html currentLang='is' languages='[{"code":"is","name":"Íslenska","url":"/is/page"},{"code":"en","name":"English","url":"/en/page"}]' %}
 ```
 
 ### Properties
