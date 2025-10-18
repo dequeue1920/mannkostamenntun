@@ -1,0 +1,52 @@
+Run actions/jekyll-build-pages@v1
+/usr/bin/docker run --name ghcrioactionsjekyllbuildpagesv1013_1b9965 --label c4b079 --workdir /github/workspace --rm -e "INPUT_SOURCE" -e "INPUT_DESTINATION" -e "INPUT_FUTURE" -e "INPUT_BUILD_REVISION" -e "INPUT_VERBOSE" -e "INPUT_TOKEN" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_ID_TOKEN_REQUEST_URL" -e "ACTIONS_ID_TOKEN_REQUEST_TOKEN" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/runner/work/mannkostamenntun/mannkostamenntun":"/github/workspace" ghcr.io/actions/jekyll-build-pages:v1.0.13
+To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+  Liquid Exception: Invalid syntax for include tag: with { "activeItem": "home", "showLanguageSwitcher": true } Valid syntax: {% include file.ext param='value' param2='value' %} in docs/components.md
+/usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/tags/include.rb:82:in `validate_params': Invalid syntax for include tag: (ArgumentError)
+
+  with {
+    "activeItem": "home",
+    "showLanguageSwitcher": true
+}
+
+Valid syntax:
+
+  {% include file.ext param='value' param2='value' %}
+
+
+
+          raise ArgumentError, <<-MSG
+                ^^^^^^^^^^^^^^^^^^^^^
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/tags/include.rb:37:in `initialize'
+	from /usr/local/bundle/gems/liquid-4.0.4/lib/liquid/tag.rb:9:in `new'
+	from /usr/local/bundle/gems/liquid-4.0.4/lib/liquid/tag.rb:9:in `parse'
+	from /usr/local/bundle/gems/liquid-4.0.4/lib/liquid/block_body.rb:34:in `parse'
+	from /usr/local/bundle/gems/liquid-4.0.4/lib/liquid/document.rb:10:in `parse'
+	from /usr/local/bundle/gems/liquid-4.0.4/lib/liquid/document.rb:5:in `parse'
+	from /usr/local/bundle/gems/liquid-4.0.4/lib/liquid/template.rb:130:in `parse'
+	from /usr/local/bundle/gems/liquid-4.0.4/lib/liquid/template.rb:114:in `parse'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/liquid_renderer/file.rb:13:in `block in parse'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/liquid_renderer/file.rb:49:in `measure_time'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/liquid_renderer/file.rb:12:in `parse'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/renderer.rb:121:in `render_liquid'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/renderer.rb:79:in `render_document'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/renderer.rb:62:in `run'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/site.rb:479:in `render_regenerated'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/site.rb:472:in `block in render_pages'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/site.rb:471:in `each'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/site.rb:471:in `render_pages'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/site.rb:192:in `render'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/site.rb:71:in `process'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/command.rb:28:in `process_site'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/commands/build.rb:65:in `build'
+	from /usr/local/bundle/gems/jekyll-3.10.0/lib/jekyll/commands/build.rb:36:in `process'
+	from /usr/local/bundle/gems/github-pages-232/bin/github-pages:70:in `block (3 levels) in <top (required)>'
+	from /usr/local/bundle/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `block in execute'
+	from /usr/local/bundle/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `each'
+	from /usr/local/bundle/gems/mercenary-0.3.6/lib/mercenary/command.rb:220:in `execute'
+	from /usr/local/bundle/gems/mercenary-0.3.6/lib/mercenary/program.rb:42:in `go'
+	from /usr/local/bundle/gems/mercenary-0.3.6/lib/mercenary.rb:19:in `program'
+	from /usr/local/bundle/gems/github-pages-232/bin/github-pages:6:in `<top (required)>'
+	from /usr/local/bundle/bin/github-pages:25:in `load'
+	from /usr/local/bundle/bin/github-pages:25:in `<main>'
+Error:  Logging at level: debug Configuration file: /github/workspace/./_config.yml GitHub Pages: github-pages v232 GitHub Pages: jekyll v3.10.0 Theme: jekyll-theme-primer Theme source: /usr/local/bundle/gems/jekyll-theme-primer-0.6.0 Requiring: jekyll-github-metadata Requiring: jekyll-seo-tag Requiring: jekyll-coffeescript Requiring: jekyll-commonmark-ghpages Requiring: jekyll-gist Requiring: jekyll-github-metadata Requiring: jekyll-paginate Requiring: jekyll-relative-links Requiring: jekyll-optional-front-matter Requiring: jekyll-readme-index Requiring: jekyll-default-layout Requiring: jekyll-titles-from-headings GitHub Metadata: Initializing... Source: /github/workspace/. Destination: /github/workspace/./_site Incremental build: disabled. Enable with --incremental Generating... EntryFilter: excluded /CNAME Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_en.html Globbed Scope Path: about_en.html Globbed Scope Path: courses_
