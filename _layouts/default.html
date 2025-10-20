@@ -1,4 +1,33 @@
 <!DOCTYPE html>
+<html lang="{{ page.lang | default: site.default_lang | default: 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | escape }}</title>
+  {% if site.seo %}
+    {% seo %}
+  {% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <header>
+    {% include header.html %}
+  </header>
+
+  <main role="main">
+    {{ content }}
+  </main>
+
+  <footer>
+    {% include footer.html %}
+  </footer>
+
+  <!-- Optional: include site JS if present -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+</body>
+</html>
+<!DOCTYPE html>
 <html lang="{{ page.lang | default: site.default_lang }}">
 <head>
 <meta charset="utf-8">
