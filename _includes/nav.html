@@ -30,6 +30,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link px-3 {% if page.url contains '/about/project' or page.url contains '/about/' %}active{% endif %}" href="{{ '/about/' | relative_url }}">
+                        <i class="fas fa-project-diagram d-lg-none me-2"></i>Um verkefnið
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link px-3 {% if page.url contains '/portfolio' %}active{% endif %}" href="/portfolio.html">
                         <i class="fas fa-graduation-cap d-lg-none me-2"></i>Mannkostamenntun
                     </a>
