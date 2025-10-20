@@ -1,75 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Mannkostamenntun og efling dygða í gegnum ljóðmennt: Yfirlit</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="http://webthemez.com" />
-<!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
-<link href="css/components/responsive-images.css" rel="stylesheet" />
- 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-</head>
-<body>
-<div id="wrapper">
-
-	<!-- start header -->
-		<header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                  	<a class="navbar-brand" href="index.html">
-                        <img 
-                            src="img/logo.png" 
-                            alt="Mannkostamenntun logo" 
-                            data-responsive-image 
-                            data-lazy="false"
-                            class="logo-img"/>
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Heim</a></li> 
-						<li class="active"><a href="about.html">Yfirlit</a></li>
-						<li><a href="courses.html">Kennsluefni</a></li>
-                        <li><a href="portfolio.html">Mannkostamenntun</a></li>
-                        <li><a href="pricing.html">Bækur</a></li>
-                        <li><a href="contact.html">Tengslaupplýsingar</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-	</header><!-- end header -->
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2 class="pageTitle">Mannkostamenntun og menntun dygða í gegnum ljóðmennt: Yfirlit</h2>
-			</div>
-		</div>
-	</div>
-	</section>
+---
+layout: default
+title: "About"
+lang: en
+---
+{% include components/page-title.html title="Mannkostamenntun og menntun dygða í gegnum ljóðmennt: Yfirlit" %}
 	<section id="content">
 	<div class="container">
 					
 					<div class="about">
-								<a href="about_en.html" class="btn btn-color">English</a>  
-					
+								{% include components/language-switcher.html %}
 						<div class="row"> 
 							<div class="col-md-12">
 								<div class="about-logo">
@@ -83,12 +22,11 @@
 							
 						 <div class="row">
 							<div class="col-md-6">
-                                <img 
-                                    src="img/yfirlit.png" 
-                                    alt="Yfirlit yfir kennslustundir og innihald þeirra" 
-                                    data-responsive-image
-                                    class="responsive-img fade-in"
-                                    data-sizes="(max-width: 768px) 100vw, 50vw"/>
+								<picture>
+								  <source srcset="/assets/images/yfirlit.avif" type="image/avif">
+								  <source srcset="/assets/images/yfirlit.webp" type="image/webp">
+								  <img src="/assets/images/yfirlit.jpg" alt="Yfirlit yfir kennslustundir og innihald þeirra" class="responsive-img fade-in" loading="lazy">
+								</picture>
 								<div class="space"></div>
 							</div>
 							<div class="col-md-6">
@@ -235,18 +173,17 @@ um mannkosti og dygðir við Háskólann í Birmingham.</p>
 						
 						<!-- Our team starts -->
 						
-						<div class="team-six">
+								<div class="team-six">
 							<div class="row">
-								<div class="col-md-3 col-sm-6">
+									<div class="col-md-3 col-sm-6">
 									<!-- Team Member -->
 									<a href="https://lifeworthliving.is/lif-sem-er-lifsia-og-stjornendur/"><div class="team-member">
 										<!-- Image -->
-										<img 
-                                            src="img/líf sem er lífsins virði.jpg" 
-                                            alt="Líf sem er lífsins virði - forsíðumynd" 
-                                            data-responsive-image
-                                            class="card-img fade-in"
-                                            data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw">
+																				<picture>
+																					<source srcset="/assets/images/lif.avif" type="image/avif">
+																					<source srcset="/assets/images/lif.webp" type="image/webp">
+																					<img src="/assets/images/lif.jpg" alt="Líf sem er lífsins virði - forsíðumynd" class="card-img fade-in" loading="lazy">
+																				</picture>
 										<!-- Name -->
 										<h4>Líf sem er lífsins virði</h4>
 										<span class="deg">Að hugsa um kennara og stjórnendur</span> 
@@ -256,12 +193,11 @@ um mannkosti og dygðir við Háskólann í Birmingham.</p>
 									<!-- Team Member -->
 									<a href="https://sites.google.com/view/leysum-malin/heim"><div class="team-member">
 										<!-- Image -->
-										<img 
-                                            src="img/leysum málin.png" 
-                                            alt="Leysum málin - verkefni" 
-                                            data-responsive-image
-                                            class="card-img fade-in"
-                                            data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw">
+																				<picture>
+																					<source srcset="/assets/images/leysum.avif" type="image/avif">
+																					<source srcset="/assets/images/leysum.webp" type="image/webp">
+																					<img src="/assets/images/leysum.jpg" alt="Leysum málin - verkefni" class="card-img fade-in" loading="lazy">
+																				</picture>
 										<!-- Name -->
 										<h4>Leysum málin!</h4>
 										<span class="deg">Lausnamiðuð nálgun til að styrkja sjálfsmyndina</span> 
@@ -271,12 +207,11 @@ um mannkosti og dygðir við Háskólann í Birmingham.</p>
 									<!-- Team Member -->
 									<a href="https://menntastefna.is/verkfaerakista/"><div class="team-member">
 										<!-- Image -->
-										<img 
-                                            src="img/menntastefna reykjavíkur.png" 
-                                            alt="Menntastefna Reykjavíkur - verkfærakista" 
-                                            data-responsive-image
-                                            class="card-img fade-in"
-                                            data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw">
+																				<picture>
+																					<source srcset="/assets/images/menntastefna.avif" type="image/avif">
+																					<source srcset="/assets/images/menntastefna.webp" type="image/webp">
+																					<img src="/assets/images/menntastefna.jpg" alt="Menntastefna Reykjavíkur - verkfærakista" class="card-img fade-in" loading="lazy">
+																				</picture>
 										<!-- Name -->
 										<h4>Menntastefna Reykjavíkur</h4>
 										<span class="deg">Verkfærakista</span> 
@@ -286,12 +221,11 @@ um mannkosti og dygðir við Háskólann í Birmingham.</p>
 									<!-- Team Member -->
 									<a href="https://mms.is/namsefni/hvad-heldur-thu-um-gagnryna-hugsun-kennsluleidbeiningar"><div class="team-member">
 										<!-- Image -->
-										<img 
-                                            src="img/hvað heldur þú.jpg" 
-                                            alt="Hvað heldur þú? - kennsluefni um gagnrýna hugsun" 
-                                            data-responsive-image
-                                            class="card-img fade-in"
-                                            data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 25vw">
+																				<picture>
+																					<source srcset="/assets/images/hvad.avif" type="image/avif">
+																					<source srcset="/assets/images/hvad.webp" type="image/webp">
+																					<img src="/assets/images/hvad.jpg" alt="Hvað heldur þú? - kennsluefni um gagnrýna hugsun" class="card-img fade-in" loading="lazy">
+																				</picture>
 										<!-- Name -->
 										<h4>Hvað heldur þú?</h4>
 										<span class="deg">Um gagnrýna hugsun - kennsluleiðbeiningar og námsefni</span> 
