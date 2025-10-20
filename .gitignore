@@ -1,1 +1,23 @@
-node_modules
+# Jekyll build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundler and Ruby
+vendor/
+.bundle/
+Gemfile.lock
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# VS Code settings
+.vscode/
+
+# Node-related (if using Webpack or npm)
+node_modules/
