@@ -92,7 +92,7 @@
 
 ### Usage
 ```html
-{% include language-switcher.html currentLang='is' languages='[{"code":"is","name":"Íslenska","url":"/is/page"},{"code":"en","name":"English","url":"/en/page"}]' %}
+{% include language-switcher.html currentLang='is' languages='languages.yml' %}
 ```
 
 ### Properties

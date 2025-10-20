@@ -1,0 +1,7 @@
+# Language list used by the language switcher include
+- code: "is"
+  name: "Íslenska"
+  url: "/is/page"
+- code: "en"
+  name: "English"
+  url: "/en/page"
