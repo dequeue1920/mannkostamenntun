@@ -1,0 +1,17 @@
+{% comment %}Basic card include — loops through site.data.cards and renders title and description{% endcomment %}
+
+{% if site.data.cards and site.data.cards.size > 0 %}
+  <div class="cards">
+    {% for card in site.data.cards %}
+      <article class="card">
+        <h3 class="card-title">{{ card.title }}</h3>
+        <div class="card-body">{{ card.description }}</div>
+      </article>
+    {% endfor %}
+  </div>
+{% else %}
+  <!-- No cards data found: create a placeholder to avoid Jekyll errors -->
+  <div class="cards cards--empty">
+    <p>No card data available.</p>
+  </div>
+{% endif %}
