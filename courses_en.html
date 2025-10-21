@@ -1,67 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Character education and fostering virtues through poetry education: Lesson plans</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="http://webthemez.com" />
- <!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
- 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-</head>
-<body>
-<div id="wrapper">
-
-	<!-- start header -->
-		<header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
-                </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Heim</a></li> 
-						<li><a href="about.html">Yfirlit</a></li>
-						<li class="active"><a href="courses.html">Kennsluefni</a></li>
-                        <li><a href="portfolio.html">Mannkostamenntun</a></li>
-                        <li><a href="pricing.html">Bækur</a></li>
-                        <li><a href="contact.html">Tengslaupplýsingar</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-	</header><!-- end header -->
-	<section id="inner-headline">
+---
+layout: default
+title: "Character education — Lesson plans"
+lang: en
+---
+{% include components/page-title.html title="Character education and fostering virtues through poetry education: Lesson plans" %}
+	<section class="courses">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="pageTitle">Mannkostamenntun og efling dygða í gegnum ljóðmennt: Kennsluefni</h2>
-			</div>
-		</div>
-	</div>
-	</section>
-	<section class="courses">
-    <div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-									<a href="courses.html" class="btn btn-color">Icelandic</a>  
-				<div class="aligncenter"><h2 class="aligncenter">Lessons Plans</h2><span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;"></span>The lesson plans largely encorporates the methodology of Philosophy for Children (P4C).
+									{% include components/language-switcher.html %}
+				<div class="aligncenter"><h2 class="aligncenter">Lessons Plans</h2><span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;"></span>The lesson plans largely incorporate the methodology of Philosophy for Children (P4C).
 				</div>
 			</div>
 		</div>
@@ -118,23 +66,35 @@
 <blockquot>an ongoing activity, and such an activity comprises, most crucially, the realisation of specifically human excellences. We call those excellences virtues, and they are typically considered necessary conditions of flourishing (Kristjánsson, 2015, p. 14).</blockquot>
 Virtue is, therefore, a trait of excellence encompassing a ‘moral quality that is considered desirable or right’ (Jubilee Centre for Character and Virtues, 2016). The contrary trait, as found in ‘bad character’, is called vice. In the context of this thesis, virtues are understood in Aristotelian terms. They are ‘character traits’ that guide our actions in morally commendable ways. It is already clear that the definitions that have been put forth are interwoven. Virtues are part of one’s character, i.e. one’s character inheres in the virtues one possesses.
 Virtue contributes to one’s moral connoisseurship of life – living excellently. Virtues are dispositions rooted in the ability to make good choices (Aristotle, 1992, II.1 1103a25), and learning to.</p> </br>
-        <div class="row service-v1 margin-bottom-40">
-            <div class="col-md-4 md-margin-bottom-40">
-               <img class="img-responsive" src="img/service1.jpg" alt="">   
-                <h3>Character Education</h3>
-                <p>Character education is based on the ideal that certain qualities or character traits can, and should be, developed to a positive effect within the school system. The idea of character education is grounded on the theory that students can be assisted or guided into understanding and wanting to acquire such virtues.</p>        
-            </div>
-            <div class="col-md-4">
-                <img class="img-responsive" src="img/service2.jpg" alt="">            
-                <h3>Competence Aims</h3>
-                <p>In short, they are fundamental sets of intellectual, personal, social, and emotional skills that all students need to engage meaningfully in lifelong learning and thrive as individuals and citizens.</p>        
-            </div>
-            <div class="col-md-4 md-margin-bottom-40">
-              <img class="img-responsive" src="img/service3.jpg" alt="">  
-                <h3>Assessment</h3>
-                <p>Assessment is the process of evaluating how well students have learned specific skills, knowledge, or competencies. It goes beyond traditional testing by focusing on practical demonstration of abilities and understanding.</p>        
-            </div>
-        </div>
+				<div class="row service-v1 margin-bottom-40">
+						<div class="col-md-4 md-margin-bottom-40">
+							 <picture>
+								 <source srcset="/img/service1-320.webp" type="image/webp">
+								 <source srcset="/img/service1-1200.avif" type="image/avif">
+								 <img src="/img/service1.jpg" alt="Illustration for character education" class="card-img fade-in" loading="lazy">
+							 </picture>
+								<h3>Character Education</h3>
+								<p>Character education is based on the ideal that certain qualities or character traits can, and should be, developed to a positive effect within the school system. The idea of character education is grounded on the theory that students can be assisted or guided into understanding and wanting to acquire such virtues.</p>        
+						</div>
+						<div class="col-md-4">
+							 <picture>
+								 <source srcset="/img/service2-320.webp" type="image/webp">
+								 <source srcset="/img/service2-1200.avif" type="image/avif">
+								 <img src="/img/service2.jpg" alt="Illustration for competence aims" class="card-img fade-in" loading="lazy">
+							 </picture>
+								<h3>Competence Aims</h3>
+								<p>In short, they are fundamental sets of intellectual, personal, social, and emotional skills that all students need to engage meaningfully in lifelong learning and thrive as individuals and citizens.</p>        
+						</div>
+						<div class="col-md-4 md-margin-bottom-40">
+							 <picture>
+								 <source srcset="/img/service3-320.webp" type="image/webp">
+								 <source srcset="/img/service3-1200.avif" type="image/avif">
+								 <img src="/img/service3.jpg" alt="Illustration for assessment" class="card-img fade-in" loading="lazy">
+							 </picture>
+								<h3>Assessment</h3>
+								<p>Assessment is the process of evaluating how well students have learned specific skills, knowledge, or competencies. It goes beyond traditional testing by focusing on practical demonstration of abilities and understanding.</p>        
+						</div>
+				</div>
     </div>
     </section>
 	<footer>

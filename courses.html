@@ -1,74 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Mannkostamenntun og efling dygða í gegnum ljóðmennt: Kennsluefni</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="http://webthemez.com" />
- <!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
-<link href="css/components/responsive-images.css" rel="stylesheet" />
- 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-</head>
-<body>
-<div id="wrapper">
-
-	<!-- start header -->
-		<header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html">
-                        <img 
-                            src="img/logo.png" 
-                            alt="Mannkostamenntun logo" 
-                            data-responsive-image 
-                            data-lazy="false"
-                            class="logo-img"/>
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Heim</a></li> 
-						<li><a href="about.html">Yfirlit</a></li>
-						<li class="active"><a href="courses.html">Kennsluefni</a></li>
-                        <li><a href="portfolio.html">Mannkostamenntun</a></li>
-                        <li><a href="pricing.html">Bækur</a></li>
-                        <li><a href="contact.html">Tengslaupplýsingar</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-	</header><!-- end header -->
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2 class="pageTitle">Mannkostamenntun og efling dygða í gegnum ljóðmennt: Kennsluefni</h2>
-			</div>
-		</div>
-	</div>
-	</section>
+---
+layout: default
+title: "Kennsluefni"
+lang: is
+---
+{% include components/page-title.html title="Mannkostamenntun og efling dygða í gegnum ljóðmennt: Kennsluefni" %}
 	<section class="courses">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-									<a href="courses_en.html" class="btn btn-color">English</a>  
+									{% include components/language-switcher.html %}
 				<div class="aligncenter"><h2 class="aligncenter">Kennsluáætlanir</h2><span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;"></span>Kennslustundirnar byggja að verulegu leyti á aðferðafræði þeirri sem nefnd er heimspeki með börnum (e. P4C). Kennaranum er bent efni og leiðbeiningar um samræðustjórn í verkefnabanka Félags heimspekikennara, og einkum skrif Brynhildar Sigurðardóttur um Þróun samræðufélags (2013) og ýmsar æfingar í <a href="https://verkefnabanki.wordpress.com/category/skolastig/grunnskoli-unglingastig/">Verkefnabanka Heimspekitorgsins um heimspekilega samræðu</a>.
 				</div>
 			</div>
@@ -148,43 +88,40 @@ hegðunar og ytri og innri skapgerðar en að gefa til kynna að bara sé verið
 geðshræringar. Ef til vill hefði réttnefni mannkostamenntunar verið siðmennt en það hugtak hefur
 þegar fengið aðra skírskotun í samtímanum, hér á landi.
 </p> </br>
-        <div class="row service-v1 margin-bottom-40">
-            <div class="col-md-4 md-margin-bottom-40">
-               <img 
-                    src="img/service1.jpg" 
-                    alt="Mannkostamenntun - myndskreyting" 
-                    data-responsive-image
-                    class="card-img fade-in"
-                    data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 33vw">
-                <h3>Mannkostamenntun</h3>
-                <p>Mannkostamenntun á rætur að rekja til grískrar heimspeki. Sókrates er gjarnan talinn upphafsmaður
+				<div class="row service-v1 margin-bottom-40">
+						<div class="col-md-4 md-margin-bottom-40">
+							 <picture>
+								 <source srcset="/assets/images/service1.avif" type="image/avif">
+								 <source srcset="/assets/images/service1.webp" type="image/webp">
+								 <img src="/assets/images/service1.jpg" alt="Mannkostamenntun - myndskreyting" class="card-img fade-in" loading="lazy">
+							 </picture>
+								<h3>Mannkostamenntun</h3>
+								<p>Mannkostamenntun á rætur að rekja til grískrar heimspeki. Sókrates er gjarnan talinn upphafsmaður
 vestrænnar siðfræði sem er tilraun til að veita innsýn í hvernig breytni manna lýsir
 því hvernig lífi þeir lifa. Þannig taldi Sókrates að ef menn leituðu sannleikans yrðu þeir líklegri til að
 taka góðar ákvarðanir. Vitnað hefur verið til samræðutækni Sókratesar sem bestu
 kennsluaðferðarinnar sem fyrir finnst enn þann dag í dag (Sigurður Nordal, 1996, bls. 17).
 </p>        
-            </div>
-            <div class="col-md-4">
-                <img 
-                    src="img/service2.jpg" 
-                    alt="Hæfniviðmið - myndskreyting" 
-                    data-responsive-image
-                    class="card-img fade-in"
-                    data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 33vw">
-                <h3>Hæfniviðmið</h3>
-                <p>Hæfniviðmið eru skilgreiningar á færni, þekkingu og viðhorfum sem nemendur eiga að ná við lok náms, sem styður við skipulagningu náms, kennslu og mats.</p>        
-            </div>
-            <div class="col-md-4 md-margin-bottom-40">
-              <img 
-                    src="img/service3.jpg" 
-                    alt="Námsmat - myndskreyting" 
-                    data-responsive-image
-                    class="card-img fade-in"
-                    data-sizes="(max-width: 576px) 100vw, (max-width: 768px) 50vw, 33vw">
-                <h3>Námsmat</h3>
-                <p>Námsmat er tæki til að meta að hve miklu leyti nemandi hafi náð hæfniviðmiðum námsþattar.</p>        
-            </div>
-        </div>  
+						</div>
+						<div class="col-md-4">
+							 <picture>
+								 <source srcset="/assets/images/service2.avif" type="image/avif">
+								 <source srcset="/assets/images/service2.webp" type="image/webp">
+								 <img src="/assets/images/service2.jpg" alt="Hæfniviðmið - myndskreyting" class="card-img fade-in" loading="lazy">
+							 </picture>
+								<h3>Hæfniviðmið</h3>
+								<p>Hæfniviðmið eru skilgreiningar á færni, þekkingu og viðhorfum sem nemendur eiga að ná við lok náms, sem styður við skipulagningu náms, kennslu og mats.</p>        
+						</div>
+						<div class="col-md-4 md-margin-bottom-40">
+							 <picture>
+								 <source srcset="/assets/images/service3.avif" type="image/avif">
+								 <source srcset="/assets/images/service3.webp" type="image/webp">
+								 <img src="/assets/images/service3.jpg" alt="Námsmat - myndskreyting" class="card-img fade-in" loading="lazy">
+							 </picture>
+								<h3>Námsmat</h3>
+								<p>Námsmat er tæki til að meta að hve miklu leyti nemandi hafi náð hæfniviðmiðum námsþattar.</p>        
+						</div>
+				</div>  
     </div>
     </section>
 	<footer>
