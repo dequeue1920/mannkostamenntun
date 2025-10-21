@@ -1,10 +1,10 @@
 {% assign card_class = "" %}
-{% if include.hover %}{% assign card_class = card_class | append: " card-hover" %}{% endif %}
-{% if include.shadow %}{% assign card_class = card_class | append: " shadow-sm" %}{% endif %}
+{% if include.hover %}{% assign card_class = card_class | append=" card-hover" %}{% endif %}
+{% if include.shadow %}{% assign card_class = card_class | append=" shadow-sm" %}{% endif %}
 
 <div class="card {{ card_class }} {% if include.class %}{{ include.class }}{% endif %}">
     {% if include.image %}
-    <img src="{{ include.image }}" class="card-img-top" alt="{{ include.image_alt | default: include.title }}">
+    <img src="{{ include.image }}" class="card-img-top" alt="{{ include.image_alt | default=include.title }}">
     {% endif %}
     
     {% if include.icon %}

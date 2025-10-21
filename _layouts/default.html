@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.default_lang | default: 'en' }}">
+<html lang="{{ page.lang | default=site.default_lang | default='en' }}">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,18 +23,18 @@
     {% include footer.html %}
   </footer>
 
-  <!-- Optional: include site JS if present -->
+  <!-- Optional=include site JS if present -->
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
 </body>
 </html>
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.default_lang }}">
+<html lang="{{ page.lang | default=site.default_lang }}">
 <head>
 <meta charset="utf-8">
 <title>{{ page.title }}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="{{ page.description | default: site.description }}" />
-<meta name="author" content="{{ page.author | default: site.author }}" />
+<meta name="description" content="{{ page.description | default=site.description }}" />
+<meta name="author" content="{{ page.author | default=site.author }}" />
 <!-- css -->
 <link href="{{ '/css/bootstrap.min.css' | relative_url }}" rel="stylesheet" />
 <link href="{{ '/css/fancybox/jquery.fancybox.css' | relative_url }}" rel="stylesheet">
@@ -43,7 +43,7 @@
  
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
-      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="https=//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
 </head>
@@ -85,7 +85,7 @@
                         <h5 class="widgetheading">Um síðuna</h5>
                         <address>
                         <strong>Mannkostamenntun</strong><br>
-                        Ábyrgðarmaður: Kristian Guttesen<br>
+                        Ábyrgðarmaður=Kristian Guttesen<br>
                          Norðurslóð 2, 600 Akureyri.</address>
                         <p>
                             <i class="icon-phone"></i> (+354) 460-8597 <br>
@@ -97,11 +97,11 @@
                     <div class="widget">
                         <h5 class="widgetheading">Hlekkir</h5>
                         <ul class="link-list">
-                            <li><a href="https://heimspekitorg.is/">Félag heimspekikennara</a></li>
-                            <li><a href="https://heimspekismidja.wordpress.com/">Sísyfos heimspekismiðja</a></li>
+                            <li><a href="https=//heimspekitorg.is/">Félag heimspekikennara</a></li>
+                            <li><a href="https=//heimspekismidja.wordpress.com/">Sísyfos heimspekismiðja</a></li>
                             <li><a href="{{ '/pdf/68-æfingar-í-heimspeki.pdf' | relative_url }}">68 æfingar í heimspeki</a></li>
-                            <li><a href="https://heimspeki.hi.is/about/ritger%c3%b0ir/">Heimspekivefurinn</a></li>
-                            <li><a href="https://verkefnabanki.wordpress.com/">Verkefnabanki Heimspekitorgsins</a></li>
+                            <li><a href="https=//heimspeki.hi.is/about/ritger%c3%b0ir/">Heimspekivefurinn</a></li>
+                            <li><a href="https=//verkefnabanki.wordpress.com/">Verkefnabanki Heimspekitorgsins</a></li>
                         </ul>
                     </div>
                 </div>
@@ -133,16 +133,16 @@
                     <div class="col-lg-6">
                         <div class="copyright">
                             <p>
-                                <span>&copy; Kristian Guttesen Allur réttur áskilinn. Sniðmát smíðað af </span><a href="http://webthemez.com" target="_blank">WebThemez</a>
+                                <span>&copy; Kristian Guttesen Allur réttur áskilinn. Sniðmát smíðað af </span><a href="http=//webthemez.com" target="_blank">WebThemez</a>
                             </p>
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <ul class="social-network">
-                            <li><a href="https://www.facebook.com/kristian.guttesen/" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://x.com/guttesen" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/kristian-guttesen/" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="https://www.pinterest.com/kguttesen/" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="https=//www.facebook.com/kristian.guttesen/" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https=//x.com/guttesen" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https=//www.linkedin.com/in/kristian-guttesen/" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https=//www.pinterest.com/kguttesen/" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
                         </ul>
                     </div>
                 </div>

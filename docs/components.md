@@ -15,8 +15,8 @@
 ```
 
 ### Properties
-- `activeItem`: Current page identifier
-- `showLanguageSwitcher`: Boolean to toggle language switcher visibility
+- `activeItem`=Current page identifier
+- `showLanguageSwitcher`=Boolean to toggle language switcher visibility
 
 ### Accessibility Features
 - Proper `aria-current` for active items
@@ -32,11 +32,11 @@
 ```
 
 ### Properties
-- `title`: Main heading (required)
-- `subtitle`: Secondary text (optional)
-- `background`: Background image path
-- `ctaText`: Call-to-action button text
-- `ctaUrl`: Call-to-action URL
+- `title`=Main heading (required)
+- `subtitle`=Secondary text (optional)
+- `background`=Background image path
+- `ctaText`=Call-to-action button text
+- `ctaUrl`=Call-to-action URL
 
 ### Accessibility Features
 - Semantic heading structure
@@ -52,11 +52,11 @@
 ```
 
 ### Properties
-- `title`: Card heading
-- `content`: Main content
-- `image`: Optional image path
-- `imageAlt`: Image alt text
-- `link`: Card link URL
+- `title`=Card heading
+- `content`=Main content
+- `image`=Optional image path
+- `imageAlt`=Image alt text
+- `link`=Card link URL
 
 ### Accessibility Features
 - Proper heading hierarchy
@@ -72,9 +72,9 @@
 ```
 
 ### Properties
-- `submitUrl`: Form submission endpoint
-- `successMessage`: Success feedback text
-- `errorMessage`: Error feedback text
+- `submitUrl`=Form submission endpoint
+- `successMessage`=Success feedback text
+- `errorMessage`=Error feedback text
 
 ### Security Features
 - CSRF Protection
@@ -96,8 +96,8 @@
 ```
 
 ### Properties
-- `currentLang`: Current language code
-- `languages`: Array of available languages
+- `currentLang`=Current language code
+- `languages`=Array of available languages
 
 ### Accessibility Features
 - Language attributes on links
@@ -134,7 +134,7 @@
 ## Implementation Notes
 
 ### CSRF Protection
-All forms include automatic CSRF protection:
+All forms include automatic CSRF protection=
 ```javascript
 // Automatically included in all forms
 const csrf = new CSRFProtection();
@@ -142,10 +142,10 @@ csrf.initializeForms();
 ```
 
 ### Multilingual Support
-Language switching handled through:
+Language switching handled through=
 ```javascript
 // URL pattern for language versions
-const langPattern = '/:lang/:path*';
+const langPattern = '/=lang/=path*';
 ```
 
 ### Component Dependencies

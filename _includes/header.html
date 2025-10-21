@@ -30,7 +30,7 @@
                         <a class="nav-link {% if page.url == '/contact/' %}active{% endif %}" href="/contact.html">Tengslaupplýsingar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ page.alternate_url | default: page.url | replace: '.html', '_en.html' }}">
+                        <a class="nav-link" href="{{ page.alternate_url | default=page.url | replace='.html', '_en.html' }}">
                             <span class="d-lg-none">Switch to English</span>
                             <span class="d-none d-lg-inline" aria-label="Switch to English">EN</span>
                         </a>

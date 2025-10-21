@@ -1,6 +1,6 @@
 # Website Codebase Analysis and Modernization Guide
 
-Last updated: 2025-10-10
+Last updated=2025-10-10
 
 ## Image Optimization Implementation Report
 
@@ -8,10 +8,10 @@ Last updated: 2025-10-10
 - Successfully generated multiple formats (AVIF, WebP, original) for all images
 - Created responsive sizes (320px, 640px, 960px, 1200px, 1800px, 2400px)
 - Generated low-resolution placeholders for progressive loading
-- Optimized compression ratios:
-  - AVIF: 65 quality (best compression)
-  - WebP: 80 quality (balanced)
-  - JPEG: 75 quality (balanced)
+- Optimized compression ratios=
+  - AVIF=65 quality (best compression)
+  - WebP=80 quality (balanced)
+  - JPEG=75 quality (balanced)
 
 ## Responsive Image System
 ----------------------
@@ -21,7 +21,7 @@ The responsive image system automatically generates and serves optimized images 
 
 ### Usage Examples
 
-1. Basic Usage with Data Attribute:
+1. Basic Usage with Data Attribute=
 ```html
 <img 
     src="path/to/image.jpg"
@@ -30,27 +30,27 @@ The responsive image system automatically generates and serves optimized images 
     class="my-image-class">
 ```
 
-2. Custom Configuration:
+2. Custom Configuration=
 ```html
 <img 
     src="path/to/image.jpg"
     alt="Description"
     data-responsive-image
-    data-sizes="(max-width: 768px) 100vw, 50vw"
+    data-sizes="(max-width=768px) 100vw, 50vw"
     data-lazy="false"
     class="hero-image">
 ```
 
-3. JavaScript API:
+3. JavaScript API=
 ```javascript
 import { createResponsiveImage } from './utils/responsiveImage';
 
 const imageHTML = createResponsiveImage({
-    src: 'path/to/image.jpg',
-    alt: 'Description',
-    sizes: '(max-width: 768px) 100vw, 960px',
-    className: 'hero-image',
-    lazy: true
+    src='path/to/image.jpg',
+    alt='Description',
+    sizes='(max-width=768px) 100vw, 960px',
+    className='hero-image',
+    lazy=true
 });
 ```
 
@@ -66,13 +66,13 @@ const imageHTML = createResponsiveImage({
 - Performance optimized
 
 ### Quality Settings
-- AVIF: 65 quality (best compression)
-- WebP: 80 quality (balanced)
-- JPEG: 75 quality (balanced)
-- PNG: 80 quality (balanced)
+- AVIF=65 quality (best compression)
+- WebP=80 quality (balanced)
+- JPEG=75 quality (balanced)
+- PNG=80 quality (balanced)
 
 ### Build Process
-The image optimization process is automated through npm scripts:
+The image optimization process is automated through npm scripts=
 
 ```bash
 # Process all images
@@ -82,7 +82,7 @@ npm run process-images
 npm run build
 ```
 
-The process-images script:
+The process-images script=
 1. Scans the img directory for images
 2. Generates multiple sizes (320px to 2400px)
 3. Creates WebP and AVIF versions
@@ -95,24 +95,24 @@ The process-images script:
 ```css
 /* Responsive base image */
 .responsive-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    background: #f0f0f0;
+    width=100%;
+    height=auto;
+    display=block;
+    background=#f0f0f0;
 }
 
 /* Loading states */
 .img-loading {
-    position: relative;
-    background: #f0f0f0;
-    overflow: hidden;
+    position=relative;
+    background=#f0f0f0;
+    overflow=hidden;
 }
 
 /* Progressive loading */
 .img-placeholder {
-    filter: blur(10px);
-    transform: scale(1.1);
-    transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    filter=blur(10px);
+    transform=scale(1.1);
+    transition=filter 0.5s cubic-bezier(0.4, 0, 0.2, 1),
                 transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 ```
@@ -121,39 +121,39 @@ The process-images script:
 ```css
 /* Hero images */
 .hero-img {
-    height: min(60vh, 600px);
-    object-fit: cover;
-    width: 100%;
+    height=min(60vh, 600px);
+    object-fit=cover;
+    width=100%;
 }
 
 /* Card images */
 .card-img {
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    border-radius: 4px;
-    transition: transform 0.3s ease;
+    aspect-ratio=16/9;
+    object-fit=cover;
+    border-radius=4px;
+    transition=transform 0.3s ease;
 }
 
 /* Profile images */
 .profile-img {
-    aspect-ratio: 1;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    aspect-ratio=1;
+    object-fit=cover;
+    border-radius=50%;
+    box-shadow=0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Logo images */
 .logo-img {
-    height: auto;
-    max-height: 50px;
-    max-width: 200px;
+    height=auto;
+    max-height=50px;
+    max-width=200px;
 }
 
 /* Thumbnail images */
 .thumbnail-img {
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    border-radius: 2px;
+    aspect-ratio=4/3;
+    object-fit=cover;
+    border-radius=2px;
 }
 ```
 
@@ -161,22 +161,22 @@ The process-images script:
 ```css
 /* Fade in animation */
 .fade-in {
-    opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity;
+    opacity=0;
+    transition=opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change=opacity;
 }
 
 /* Loading shimmer */
-.img-loading::before {
-    content: "";
-    position: absolute;
-    background: linear-gradient(
+.img-loading==before {
+    content="";
+    position=absolute;
+    background=linear-gradient(
         90deg,
         transparent 0%,
         rgba(255, 255, 255, 0.4) 50%,
         transparent 100%
     );
-    animation: loading-shimmer 1.5s infinite;
+    animation=loading-shimmer 1.5s infinite;
 }
 ```
 
@@ -189,7 +189,7 @@ The process-images script:
 
 ### Usage Guidelines
 
-1. Basic Image:
+1. Basic Image=
 ```html
 <img 
     src="image.jpg"
@@ -198,7 +198,7 @@ The process-images script:
     class="responsive-img">
 ```
 
-2. Hero Image:
+2. Hero Image=
 ```html
 <img 
     src="hero.jpg"
@@ -208,17 +208,17 @@ The process-images script:
     class="hero-img fade-in">
 ```
 
-3. Card Image:
+3. Card Image=
 ```html
 <img 
     src="card.jpg"
     alt="Card description"
     data-responsive-image
-    data-sizes="(max-width: 768px) 100vw, 33vw"
+    data-sizes="(max-width=768px) 100vw, 33vw"
     class="card-img fade-in">
 ```
 
-4. Profile Image:
+4. Profile Image=
 ```html
 <img 
     src="profile.jpg"
@@ -230,18 +230,18 @@ The process-images script:
 ### Best Practices
 
 1. Always provide meaningful alt text
-2. Use appropriate size hints:
-   - Full width: "100vw"
-   - Columns: "(max-width: 768px) 100vw, 50vw"
-   - Cards: "(max-width: 768px) 100vw, 33vw"
+2. Use appropriate size hints=
+   - Full width="100vw"
+   - Columns="(max-width=768px) 100vw, 50vw"
+   - Cards="(max-width=768px) 100vw, 33vw"
 
-3. Choose appropriate classes:
-   - hero-img: For large hero images
-   - card-img: For card/thumbnail images
-   - profile-img: For profile pictures
-   - logo-img: For logos
+3. Choose appropriate classes=
+   - hero-img=For large hero images
+   - card-img=For card/thumbnail images
+   - profile-img=For profile pictures
+   - logo-img=For logos
 
-4. Performance tips:
+4. Performance tips=
    - Use lazy loading for below-the-fold images
    - Provide size hints for optimal loading
    - Enable blur-up loading with img-placeholder
@@ -333,7 +333,7 @@ website-templates/
 ### 1. Security & Performance Improvements
 
 1. Update HTTP to HTTPS
-   - Replace all `http://` resources with `https://`
+   - Replace all `http=//` resources with `https=//`
    - Update Google HTML5 shim to secure version
    - Add SSL certificate (contact hosting provider)
 
@@ -356,11 +356,11 @@ website-templates/
    ```json
    // package.json example
    {
-     "scripts": {
-       "build": "webpack --mode production",
-       "dev": "webpack serve --mode development",
-       "lint": "eslint src/js",
-       "format": "prettier --write \"src/**/*.{js,css,html}\""
+     "scripts"={
+       "build"="webpack --mode production",
+       "dev"="webpack serve --mode development",
+       "lint"="eslint src/js",
+       "format"="prettier --write \"src/**/*.{js,css,html}\""
      }
    }
    ```
@@ -399,7 +399,7 @@ website-templates/
 3. Add responsive images
    ```html
    <picture>
-     <source srcset="img/hero-mobile.webp" media="(max-width: 768px)">
+     <source srcset="img/hero-mobile.webp" media="(max-width=768px)">
      <img src="img/hero.webp" alt="...">
    </picture>
    ```
@@ -418,11 +418,11 @@ website-templates/
 2. Optimization Configuration
    ```javascript
    module.exports = {
-     jpeg: { quality: 80, progressive: true },
-     webp: { quality: 80, nearLossless: true },
-     avif: { quality: 65, speed: 5 },
-     responsive: {
-       sizes: [640, 768, 1024, 1366, 1920]
+     jpeg={ quality=80, progressive=true },
+     webp={ quality=80, nearLossless=true },
+     avif={ quality=65, speed=5 },
+     responsive={
+       sizes=[640, 768, 1024, 1366, 1920]
      }
    };
    ```
@@ -439,26 +439,26 @@ website-templates/
 1. Layout Architecture
    ```css
    /* Mobile-First Breakpoints */
-   :root {
-     --breakpoint-sm: 576px;
-     --breakpoint-md: 768px;
-     --breakpoint-lg: 992px;
-     --breakpoint-xl: 1200px;
-     --breakpoint-xxl: 1400px;
+   =root {
+     --breakpoint-sm=576px;
+     --breakpoint-md=768px;
+     --breakpoint-lg=992px;
+     --breakpoint-xl=1200px;
+     --breakpoint-xxl=1400px;
    }
 
    /* Container System */
    .container-fluid-xl {
-     width: 100%;
-     max-width: var(--breakpoint-xl);
-     margin: 0 auto;
-     padding: 0 1rem;
+     width=100%;
+     max-width=var(--breakpoint-xl);
+     margin=0 auto;
+     padding=0 1rem;
    }
 
    /* Grid System */
    .grid {
-     display: grid;
-     gap: var(--grid-gap, 1rem);
+     display=grid;
+     gap=var(--grid-gap, 1rem);
    }
    ```
 
@@ -568,7 +568,7 @@ website-templates/
 ## Current Technical Debt
 
 1. Outdated Dependencies
-   - Bootstrap 3.3.1 (Current: 5.3.x)
+   - Bootstrap 3.3.1 (Current=5.3.x)
    - jQuery and multiple jQuery plugins
    - Insecure HTTP resources
 
@@ -594,7 +594,7 @@ Monitor this file for updates as modernization progresses.
 
 ### Grid System Changes
 
-Current Bootstrap 3 classes found in templates and their Bootstrap 5 equivalents:
+Current Bootstrap 3 classes found in templates and their Bootstrap 5 equivalents=
 
 1. Column Classes
    ```
@@ -700,32 +700,32 @@ Current Bootstrap 3 classes found in templates and their Bootstrap 5 equivalents
 
 ### Implementation Steps
 
-1. Update Dependencies:
+1. Update Dependencies=
    ```html
    <!-- Remove old Bootstrap 3 CSS and JS -->
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <script src="js/bootstrap.min.js"></script>
 
    <!-- Add Bootstrap 5 -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+   <link href="https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <script src="https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
    ```
 
-2. Update Navigation:
+2. Update Navigation=
    - Replace all `navbar-default` with `navbar-light` or `navbar-dark`
    - Add `navbar-expand-*` classes to navbar
    - Update toggle button markup
 
-3. Convert Panels to Cards:
+3. Convert Panels to Cards=
    - Replace all panel components with card equivalents
    - Update panel headings and bodies
 
-4. Update Grid System:
+4. Update Grid System=
    - Review all `col-*` classes
    - Add container classes where needed
    - Consider using new flex utilities
 
-5. Forms and Buttons:
+5. Forms and Buttons=
    - Update form-group to mb-3
    - Review button classes
    - Update input groups

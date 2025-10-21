@@ -17,7 +17,7 @@
 Header set X-Content-Type-Options "nosniff"
 Header set X-Frame-Options "SAMEORIGIN"
 Header set X-XSS-Protection "1; mode=block"
-Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;"
+Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https=//www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data=https=; font-src 'self' data=;"
 Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 Header set Referrer-Policy "strict-origin-when-cross-origin"
 Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
@@ -36,14 +36,14 @@ Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 
 ### jQuery Refactoring Notes
 
-Current jQuery Dependencies:
+Current jQuery Dependencies=
 1. Animations/Hover effects
 2. Accordion functionality
 3. FancyBox lightbox
 4. ScrollToTop functionality
 5. FlexSlider for carousels
 
-Modern Replacements:
+Modern Replacements=
 1. CSS Animations with @keyframes
 2. Bootstrap 5 Collapse component
 3. PhotoSwipe or GLightbox
@@ -52,13 +52,13 @@ Modern Replacements:
 
 ## Accessibility Improvements
 
-1. ARIA Labels to Add:
+1. ARIA Labels to Add=
    - Navigation landmarks
    - Form controls
    - Modal dialogs
    - Image descriptions
 
-2. Semantic HTML Updates:
+2. Semantic HTML Updates=
    - Replace div-based navigation with `<nav>`
    - Use `<main>`, `<article>`, `<section>` appropriately
    - Add `<header>` and `<footer>` landmarks
@@ -69,23 +69,23 @@ Modern Replacements:
 ```javascript
 // webpack.config.js
 module.exports = {
-  entry: './src/js/main.js',
-  output: {
-    filename: '[name].[contenthash].js',
-    path: path.resolve(__dirname, 'dist')
+  entry='./src/js/main.js',
+  output={
+    filename='[name].[contenthash].js',
+    path=path.resolve(__dirname, 'dist')
   },
-  module: {
-    rules: [
+  module={
+    rules=[
       {
-        test: /\.(jpe?g|png|webp)$/i,
-        use: [
+        test=/\.(jpe?g|png|webp)$/i,
+        use=[
           {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: { quality: 65 },
-              webp: { quality: 80 },
-              gifsicle: { optimizationLevel: 3 },
-              pngquant: { quality: [0.65, 0.90] }
+            loader='image-webpack-loader',
+            options={
+              mozjpeg={ quality=65 },
+              webp={ quality=80 },
+              gifsicle={ optimizationLevel=3 },
+              pngquant={ quality=[0.65, 0.90] }
             }
           }
         ]

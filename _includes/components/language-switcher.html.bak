@@ -1,0 +1,34 @@
+<!-- Language Switcher Component -->
+<div class="language-switcher dropdown">
+    <button class="btn btn-link dropdown-toggle" 
+            type="button" 
+            id="languageDropdown" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false"
+            aria-label="{{ current_language == 'is' ? 'Tungumál' : 'Language' }}">
+        <span class="d-none d-sm-inline">{{ current_language == 'is' ? 'Tungumál' : 'Language' }}</span>
+        <span class="d-inline d-sm-none">{{ current_language == 'is' ? 'IS' : 'EN' }}</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+        <li>
+            <a class="dropdown-item {% if current_language == 'is' %}active{% endif %}" 
+               href="{{ page.url | replace: '_en.html', '.html' }}"
+               lang="is"
+               hreflang="is"
+               aria-current="{{ current_language == 'is' ? 'true' : 'false' }}">
+                <span class="fi fi-is me-2"></span>
+                Íslenska
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item {% if current_language == 'en' %}active{% endif %}"
+               href="{{ page.url | replace: '.html', '_en.html' }}"
+               lang="en"
+               hreflang="en"
+               aria-current="{{ current_language == 'en' ? 'true' : 'false' }}">
+                <span class="fi fi-gb me-2"></span>
+                English
+            </a>
+        </li>
+    </ul>
+</div>

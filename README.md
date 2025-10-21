@@ -25,23 +25,23 @@ A modern, responsive website for character education through poetry. Currently u
 
 ## 🚀 Quick Start
 
-1. Clone the repository:
+1. Clone the repository=
 ```bash
-git clone https://github.com/dequeue1920/mannkostamenntun.git
+git clone https=//github.com/dequeue1920/mannkostamenntun.git
 cd mannkostamenntun
 ```
 
-2. Install dependencies:
+2. Install dependencies=
 ```bash
 npm install
 ```
 
-3. Start development server:
+3. Start development server=
 ```bash
 npm start
 ```
 
-4. Build for production:
+4. Build for production=
 ```bash
 npm run build
 ```
@@ -49,25 +49,25 @@ npm run build
 ## 🛠️ Technology Stack
 
 ### Current
-- **Frontend Framework**: Bootstrap 3.3.1 (Migration to 5.x in progress)
-- **JavaScript**: jQuery with custom plugins (Migration to ES6+ in progress)
-- **Image Handling**: Basic responsive images
+- **Frontend Framework**=Bootstrap 3.3.1 (Migration to 5.x in progress)
+- **JavaScript**=jQuery with custom plugins (Migration to ES6+ in progress)
+- **Image Handling**=Basic responsive images
 
 ### Target Stack (In Progress)
-- **Frontend Framework**: Bootstrap 5.3
-- **JavaScript**: Modern ES6+, no jQuery
-- **Build Tools**: Webpack, Babel
-- **Image Optimization**: image-webpack-loader
-- **Form Validation**: Custom FormValidator class
-- **Animations**: CSS3 + Intersection Observer
-- **Galleries**: PhotoSwipe
-- **Sliders**: Swiper.js
+- **Frontend Framework**=Bootstrap 5.3
+- **JavaScript**=Modern ES6+, no jQuery
+- **Build Tools**=Webpack, Babel
+- **Image Optimization**=image-webpack-loader
+- **Form Validation**=Custom FormValidator class
+- **Animations**=CSS3 + Intersection Observer
+- **Galleries**=PhotoSwipe
+- **Sliders**=Swiper.js
 
 ### Migration Progress
-- 🔄 Bootstrap: ~20% migrated
-- 🔄 jQuery Removal: ~15% completed
-- 🔄 Build System: ~40% configured
-- 🔄 Security Features: ~10% implemented
+- 🔄 Bootstrap=~20% migrated
+- 🔄 jQuery Removal=~15% completed
+- 🔄 Build System=~40% configured
+- 🔄 Security Features=~10% implemented
 
 ## 📁 Project Structure
 

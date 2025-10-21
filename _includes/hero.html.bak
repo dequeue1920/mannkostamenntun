@@ -1,0 +1,32 @@
+<section class="hero position-relative vh-75">
+    <div class="hero-slider">
+        {% for slide in page.hero_slides %}
+        <div class="hero-slide {% if forloop.first %}active{% endif %}" 
+             style="background-image: url('{{ slide.image }}');">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12 text-center text-light">
+                        <h1 class="display-4 fw-bold mb-3">{{ slide.title }}</h1>
+                        <p class="lead mb-4">{{ slide.subtitle }}</p>
+                        {% if slide.cta_text %}
+                        <a href="{{ slide.cta_url }}" class="btn btn-primary btn-lg">
+                            {{ slide.cta_text }}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    {% if page.hero_slides.size > 1 %}
+    <div class="hero-controls position-absolute bottom-0 start-50 translate-middle-x mb-3">
+        {% for slide in page.hero_slides %}
+        <button class="btn btn-light btn-sm mx-1 {% if forloop.first %}active{% endif %}" 
+                data-slide="{{ forloop.index }}" 
+                aria-label="Go to slide {{ forloop.index }}"></button>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>

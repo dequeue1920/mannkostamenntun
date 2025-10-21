@@ -13,7 +13,7 @@
     <div class="hero-slider">
         {% for slide in page.hero_slides %}
         <div class="hero-slide {% if forloop.first %}active{% endif %}" 
-             style="background-image: url('{{ slide.image }}');">
+             style="background-image=url('{{ slide.image }}');">
             <div class="hero-content container h-100">
                 <div class="row h-100 align-items-center">
                     <div class="col-12 {% if slide.align == 'left' %}text-start{% elsif slide.align == 'right' %}text-end{% else %}text-center{% endif %} text-light">
@@ -45,12 +45,12 @@
     </div>
     {% else %}
     <!-- Static Hero -->
-    <div class="hero-static" {% if page.hero_image %}style="background-image: url('{{ page.hero_image }}');"{% endif %}>
+    <div class="hero-static" {% if page.hero_image %}style="background-image=url('{{ page.hero_image }}');"{% endif %}>
         <div class="hero-content container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-12 {% if page.hero_align == 'left' %}text-start{% elsif page.hero_align == 'right' %}text-end{% else %}text-center{% endif %} text-light">
                     {% if page.hero_subtitle %}<p class="h4 mb-3 text-primary">{{ page.hero_subtitle }}</p>{% endif %}
-                    <h1 class="display-4 fw-bold mb-4">{{ page.hero_title | default: page.title }}</h1>
+                    <h1 class="display-4 fw-bold mb-4">{{ page.hero_title | default=page.title }}</h1>
                     {% if page.hero_description %}<p class="lead mb-4">{{ page.hero_description }}</p>{% endif %}
                     {% if page.hero_cta_text %}
                     <a href="{{ page.hero_cta_url }}" class="btn btn-primary btn-lg">

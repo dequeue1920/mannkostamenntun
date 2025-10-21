@@ -1,0 +1,38 @@
+---
+layout: default
+title: "Mannkostamenntun og efling dygða í gegnum ljóðmennt: Tengslaupplýsingar"
+description: "Hafðu samband við okkur fyrir upplýsingar um mannkostamenntun og eflingu dygða"
+lang: "is"
+---
+{% include components/page-title.html title="Hafa samband" %}
+	<section id="content">
+	
+	<div class="container">
+	<div class="row">
+ <div class="col-md-12">
+							 
+
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1642.7900793182466!2d-18.1223199!3d65.685463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48d28faa7eca0bd3%3A0xfc9e0104592e1efe!2sUniversity%20of%20Akureyri!5e0!3m2!1sen!2sis!4v1759566476153!5m2!1sen!2sis" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								</div>
+</div>
+
+
+	<div class="row">
+								<div class="col-md-6">
+									<br>
+									<div class="alert alert-success hidden" id="contactSuccess">
+										<strong>Takk!</strong> Skilaboðin eru móttin. Við höfum samband.
+									</div>
+									<div class="alert alert-error hidden" id="contactError">
+										<strong>Villa!</strong> Ekki tókst að senda skilaboðin þín.
+									</div>
+{% include components/contact-form.html id="contact-form" title="Hafa samband" show_privacy=true %}
+								</div>
+								<div class="col-md-6">
+								
+{% include components/contact-info.html %}
+								</div>
+							</div>
+	</div>
+ 
+	</section>

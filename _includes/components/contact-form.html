@@ -62,7 +62,7 @@
                           id="message" 
                           name="message" 
                           placeholder="Your Message" 
-                          style="height: 150px" 
+                          style="height=150px" 
                           required
                           aria-label="Your Message"></textarea>
                 <label for="message">Your Message</label>
@@ -116,10 +116,10 @@
         try {
             const formData = new FormData(form);
             const response = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-CSRF-Token': csrfToken
+                method='POST',
+                body=formData,
+                headers={
+                    'X-CSRF-Token'=csrfToken
                 }
             });
 

@@ -61,13 +61,13 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
                         <li>
                             <a class="dropdown-item {% if page.lang == 'is' %}active{% endif %}" 
-                               href="{{ page.url | replace: '_en.html', '.html' }}">
+                               href="{{ page.url | replace='_en.html', '.html' }}">
                                 Íslenska
                             </a>
                         </li>
                         <li>
                             <a class="dropdown-item {% if page.lang == 'en' %}active{% endif %}" 
-                               href="{{ page.url | replace: '.html', '_en.html' }}">
+                               href="{{ page.url | replace='.html', '_en.html' }}">
                                 English
                             </a>
                         </li>
@@ -79,4 +79,4 @@
 </nav>
 
 <!-- Spacer for fixed navbar -->
-<div class="navbar-spacing" style="height: 76px;"></div>
+<div class="navbar-spacing" style="height=76px;"></div>

@@ -1,0 +1,102 @@
+{% assign form_id = include.id | default: "contactForm" %}
+{% assign form_class = "needs-validation" %}
+{% if include.class %}{% assign form_class = form_class | append: " " | append: include.class %}{% endif %}
+
+<form id="{{ form_id }}" class="{{ form_class }}" novalidate>
+    {% if include.title %}
+    <h2 class="h3 mb-4">{{ include.title }}</h2>
+    {% endif %}
+    
+    <!-- Alert for form messages -->
+    <div class="alert alert-success d-none" role="alert" id="{{ form_id }}-success">
+        {{ include.success_message | default: "Skilaboðin þín hafa verið send. Við höfum samband fljótlega." }}
+    </div>
+    <div class="alert alert-danger d-none" role="alert" id="{{ form_id }}-error">
+        {{ include.error_message | default: "Villa kom upp við sendingu. Vinsamlegast reyndu aftur." }}
+    </div>
+
+    <!-- Form Fields -->
+    {% for field in include.fields %}
+    <div class="mb-3">
+        {% case field.type %}
+        {% when 'textarea' %}
+        <label for="{{ form_id }}-{{ field.name }}" class="form-label">{{ field.label }}{% if field.required %} *{% endif %}</label>
+        <textarea class="form-control" 
+                  id="{{ form_id }}-{{ field.name }}"
+                  name="{{ field.name }}"
+                  rows="{{ field.rows | default: 5 }}"
+                  {% if field.required %}required{% endif %}
+                  {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}>{{ field.value }}</textarea>
+        {% when 'select' %}
+        <label for="{{ form_id }}-{{ field.name }}" class="form-label">{{ field.label }}{% if field.required %} *{% endif %}</label>
+        <select class="form-select" 
+                id="{{ form_id }}-{{ field.name }}"
+                name="{{ field.name }}"
+                {% if field.required %}required{% endif %}>
+            {% for option in field.options %}
+            <option value="{{ option.value }}" {% if option.value == field.value %}selected{% endif %}>
+                {{ option.label }}
+            </option>
+            {% endfor %}
+        </select>
+        {% else %}
+        <label for="{{ form_id }}-{{ field.name }}" class="form-label">{{ field.label }}{% if field.required %} *{% endif %}</label>
+        <input type="{{ field.type | default: 'text' }}" 
+               class="form-control" 
+               id="{{ form_id }}-{{ field.name }}"
+               name="{{ field.name }}"
+               value="{{ field.value }}"
+               {% if field.required %}required{% endif %}
+               {% if field.pattern %}pattern="{{ field.pattern }}"{% endif %}
+               {% if field.placeholder %}placeholder="{{ field.placeholder }}"{% endif %}>
+        {% endcase %}
+        {% if field.help_text %}
+        <div class="form-text">{{ field.help_text }}</div>
+        {% endif %}
+        <div class="invalid-feedback">
+            {{ field.error_message | default: "Vinsamlegast fylltu út þennan reit." }}
+        </div>
+    </div>
+    {% endfor %}
+
+    {% if include.show_privacy %}
+    <div class="mb-3">
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="{{ form_id }}-privacy" required>
+            <label class="form-check-label" for="{{ form_id }}-privacy">
+                Ég samþykki <a href="/privacy-policy.html">persónuverndarstefnu</a> síðunnar *
+            </label>
+            <div class="invalid-feedback">
+                Þú verður að samþykkja persónuverndarstefnuna til að halda áfram.
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="mt-4">
+        <button type="submit" class="btn btn-primary {% if include.button_class %}{{ include.button_class }}{% endif %}">
+            {{ include.submit_text | default: "Senda" }}
+        </button>
+        {% if include.show_reset %}
+        <button type="reset" class="btn btn-secondary ms-2">
+            {{ include.reset_text | default: "Hreinsa" }}
+        </button>
+        {% endif %}
+    </div>
+</form>
+
+<!-- Form validation script -->
+<script>
+(function() {
+    'use strict';
+    const form = document.getElementById('{{ form_id }}');
+    
+    form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    }, false);
+})();
+</script>

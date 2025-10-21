@@ -1,251 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Above Multi-purpose Free Bootstrap Responsive Template</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="" />
-<meta name="author" content="http://webthemez.com" />
-<!-- css -->
-<link href="css/bootstrap.min.css" rel="stylesheet" />
-<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-<link href="css/jcarousel.css" rel="stylesheet" />
-<link href="css/flexslider.css" rel="stylesheet" />
-<link href="css/style.css" rel="stylesheet" />
-<link href="css/components/responsive-images.css" rel="stylesheet" />
- 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+---
+layout=default
+title="Mannkostamenntun — Portfolio"
+lang=is
+permalink=/portfolio/
+---
 
-</head>
-<body>
-<div id="wrapper">
-
-	<!-- start header -->
-		<header>
-        <div class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="index.html">
-                        <picture>
-                            <source srcset="img/logo-320.avif" type="image/avif" media="(max-width: 320px)">
-                            <source srcset="img/logo-640.avif" type="image/avif" media="(max-width: 640px)">
-                            <source srcset="img/logo-320.webp" type="image/webp" media="(max-width: 320px)">
-                            <source srcset="img/logo-640.webp" type="image/webp" media="(max-width: 640px)">
-                            <img src="img/logo.png" alt="logo" class="logo-img"/>
-                        </picture>
-                    </a>
-                </div>
-                <div class="navbar-collapse collapse ">
-                    <ul class="nav navbar-nav">
-                        <li><a href="index.html">Heim</a></li> 
-						<li><a href="about.html">Yfirlit</a></li>
-						<li><a href="courses.html">Kennsluefni</a></li>
-                        <li class="active"><a href="portfolio.html">Mannkostamenntun</a></li>
-                        <li><a href="pricing.html">Bækur</a></li>
-                        <li><a href="contact.html">Tengslaupplýsingar</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-	</header><!-- end header -->
+{% include components/portfolio-title.html title="Efling dygða í gegnum ljóðmennt=Mannkostamenntun" %}
 	<section id="inner-headline">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="pageTitle">Efling dygða í gegnum ljóðmennt: Mannkostamenntun</h2>
+				<h2 class="pageTitle">Efling dygða í gegnum ljóðmennt=Mannkostamenntun</h2>
 			</div>
 		</div>
 	</div>
 	</section>
-	<section id="content">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<ul class="portfolio-categ filter">
-					<li class="all active"><a href="#">All</a></li>
-					<li class="web"><a href="#" title="">Web design</a></li>
-					<li class="icon"><a href="#" title="">Mobile App</a></li>
-					<li class="graphic"><a href="#" title="">UI design</a></li>
-				</ul>
-				<div class="clearfix">
-				</div>
+		<main id="content">
+			<div class="container">
 				<div class="row">
-					<section id="projects">
-					<ul id="thumbs" class="portfolio">
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/1.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span>
-						</a>
-						<!-- Thumb Image and Description -->
-                        <picture class="portfolio-img img-loading">
-                            <source srcset="img/works/1-320.avif" type="image/avif" media="(max-width: 320px)">
-                            <source srcset="img/works/1-640.avif" type="image/avif" media="(max-width: 640px)">
-                            <source srcset="img/works/1-960.avif" type="image/avif" media="(max-width: 960px)">
-                            <source srcset="img/works/1-320.webp" type="image/webp" media="(max-width: 320px)">
-                            <source srcset="img/works/1-640.webp" type="image/webp" media="(max-width: 640px)">
-                            <source srcset="img/works/1-960.webp" type="image/webp" media="(max-width: 960px)">
-                            <img src="img/works/1.jpg" alt="Portfolio work 1" class="portfolio-img fade-in" loading="lazy">
-                            <img src="img/works/1-placeholder.webp" class="img-placeholder" aria-hidden="true" alt="">
-                        </picture>
-						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-3 design" data-id="id-1" data-type="icon">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/2.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span>
-						</a>
-						<!-- Thumb Image and Description -->
-                        <picture class="portfolio-img img-loading">
-                            <source srcset="img/works/2-320.avif" type="image/avif" media="(max-width: 320px)">
-                            <source srcset="img/works/2-640.avif" type="image/avif" media="(max-width: 640px)">
-                            <source srcset="img/works/2-960.avif" type="image/avif" media="(max-width: 960px)">
-                            <source srcset="img/works/2-320.webp" type="image/webp" media="(max-width: 320px)">
-                            <source srcset="img/works/2-640.webp" type="image/webp" media="(max-width: 640px)">
-                            <source srcset="img/works/2-960.webp" type="image/webp" media="(max-width: 960px)">
-                            <img src="img/works/2.jpg" alt="Portfolio work 2" class="portfolio-img fade-in" loading="lazy">
-                            <img src="img/works/2-placeholder.webp" class="img-placeholder" aria-hidden="true" alt="">
-                        </picture>
-						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-3 photography" data-id="id-2" data-type="graphic">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/3.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span>
-						</a>
-						<!-- Thumb Image and Description -->
-                        <picture class="portfolio-img img-loading">
-                            <source srcset="img/works/3-320.avif" type="image/avif" media="(max-width: 320px)">
-                            <source srcset="img/works/3-640.avif" type="image/avif" media="(max-width: 640px)">
-                            <source srcset="img/works/3-960.avif" type="image/avif" media="(max-width: 960px)">
-                            <source srcset="img/works/3-320.webp" type="image/webp" media="(max-width: 320px)">
-                            <source srcset="img/works/3-640.webp" type="image/webp" media="(max-width: 640px)">
-                            <source srcset="img/works/3-960.webp" type="image/webp" media="(max-width: 960px)">
-                            <img src="img/works/3.jpg" alt="Portfolio work 3" class="portfolio-img fade-in" loading="lazy">
-                            <img src="img/works/3-placeholder.webp" class="img-placeholder" aria-hidden="true" alt="">
-                        </picture>
-						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/4.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span>
-						</a>
-						<!-- Thumb Image and Description -->
-                        <picture class="portfolio-img img-loading">
-                            <source srcset="img/works/4-320.avif" type="image/avif" media="(max-width: 320px)">
-                            <source srcset="img/works/4-640.avif" type="image/avif" media="(max-width: 640px)">
-                            <source srcset="img/works/4-960.avif" type="image/avif" media="(max-width: 960px)">
-                            <source srcset="img/works/4-320.webp" type="image/webp" media="(max-width: 320px)">
-                            <source srcset="img/works/4-640.webp" type="image/webp" media="(max-width: 640px)">
-                            <source srcset="img/works/4-960.webp" type="image/webp" media="(max-width: 960px)">
-                            <img src="img/works/4.jpg" alt="Portfolio work 4" class="portfolio-img fade-in" loading="lazy">
-                            <img src="img/works/4-placeholder.webp" class="img-placeholder" aria-hidden="true" alt="">
-                        </picture>
-						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-3 photography" data-id="id-4" data-type="web">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/5.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span>
-						</a>
-						<!-- Thumb Image and Description -->
-                        <picture class="portfolio-img img-loading">
-                            <source srcset="img/works/5-320.avif" type="image/avif" media="(max-width: 320px)">
-                            <source srcset="img/works/5-640.avif" type="image/avif" media="(max-width: 640px)">
-                            <source srcset="img/works/5-960.avif" type="image/avif" media="(max-width: 960px)">
-                            <source srcset="img/works/5-320.webp" type="image/webp" media="(max-width: 320px)">
-                            <source srcset="img/works/5-640.webp" type="image/webp" media="(max-width: 640px)">
-                            <source srcset="img/works/5-960.webp" type="image/webp" media="(max-width: 960px)">
-                            <img src="img/works/5.jpg" alt="Portfolio work 5" class="portfolio-img fade-in" loading="lazy">
-                            <img src="img/works/5-placeholder.webp" class="img-placeholder" aria-hidden="true" alt="">
-                        </picture>
-						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-3 photography" data-id="id-5" data-type="icon">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/6.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span>
-						</a>
-						<!-- Thumb Image and Description -->
-                        <picture class="portfolio-img img-loading">
-                            <source srcset="img/works/6-320.avif" type="image/avif" media="(max-width: 320px)">
-                            <source srcset="img/works/6-640.avif" type="image/avif" media="(max-width: 640px)">
-                            <source srcset="img/works/6-960.avif" type="image/avif" media="(max-width: 960px)">
-                            <source srcset="img/works/6-320.webp" type="image/webp" media="(max-width: 320px)">
-                            <source srcset="img/works/6-640.webp" type="image/webp" media="(max-width: 640px)">
-                            <source srcset="img/works/6-960.webp" type="image/webp" media="(max-width: 960px)">
-                            <img src="img/works/6.jpg" alt="Portfolio work 6" class="portfolio-img fade-in" loading="lazy">
-                            <img src="img/works/6-placeholder.webp" class="img-placeholder" aria-hidden="true" alt="">
-                        </picture>
-						</li>
-						<!-- End Item Project -->
-						<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/7.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span>
-						</a>
-						<!-- Thumb Image and Description -->
-                        <picture class="portfolio-img img-loading">
-                            <source srcset="img/works/7-320.avif" type="image/avif" media="(max-width: 320px)">
-                            <source srcset="img/works/7-640.avif" type="image/avif" media="(max-width: 640px)">
-                            <source srcset="img/works/7-960.avif" type="image/avif" media="(max-width: 960px)">
-                            <source srcset="img/works/7-320.webp" type="image/webp" media="(max-width: 320px)">
-                            <source srcset="img/works/7-640.webp" type="image/webp" media="(max-width: 640px)">
-                            <source srcset="img/works/7-960.webp" type="image/webp" media="(max-width: 960px)">
-                            <img src="img/works/7.jpg" alt="Portfolio work 7" class="portfolio-img fade-in" loading="lazy">
-                            <img src="img/works/7-placeholder.webp" class="img-placeholder" aria-hidden="true" alt="">
-                        </picture>
-						</li>
-						<!-- End Item Project -->
-						<!-- Item Project and Filter Name -->
-						<li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="graphic">
-						<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-						<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio name" href="img/works/8.jpg">
-						<span class="overlay-img"></span>
-						<span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code"></i></span>
-						</a>
-						<!-- Thumb Image and Description -->
-                        <picture class="portfolio-img img-loading">
-                            <source srcset="img/works/8-320.avif" type="image/avif" media="(max-width: 320px)">
-                            <source srcset="img/works/8-640.avif" type="image/avif" media="(max-width: 640px)">
-                            <source srcset="img/works/8-960.avif" type="image/avif" media="(max-width: 960px)">
-                            <source srcset="img/works/8-320.webp" type="image/webp" media="(max-width: 320px)">
-                            <source srcset="img/works/8-640.webp" type="image/webp" media="(max-width: 640px)">
-                            <source srcset="img/works/8-960.webp" type="image/webp" media="(max-width: 960px)">
-                            <img src="img/works/8.jpg" alt="Portfolio work 8" class="portfolio-img fade-in" loading="lazy">
-                            <img src="img/works/8-placeholder.webp" class="img-placeholder" aria-hidden="true" alt="">
-                        </picture>
-						</li>
-						<!-- End Item Project -->
-					</ul>
-					</section>
+					<div class="col-lg-12">
+						<nav class="portfolio-filter" aria-label="Portfolio categories">
+							<ul class="portfolio-categ filter">
+								<li class="all active"><a href="#">All</a></li>
+								<li class="web"><a href="#" title="">Web design</a></li>
+								<li class="icon"><a href="#" title="">Mobile App</a></li>
+								<li class="graphic"><a href="#" title="">UI design</a></li>
+							</ul>
+						</nav>
+						<div class="clearfix" role="separator" aria-hidden="true"></div>
+						<div class="row">
+							<section id="projects" aria-live="polite">
+								{% include components/portfolio-items.html %}
+							</section>
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	</section>
+		</main>
 	<footer>
 	<div class="container">
 		<div class="row">
@@ -302,7 +93,7 @@
 				<div class="col-lg-6">
 					<div class="copyright">
 						<p>
-							<span>&copy; Above Site All right reserved. Template By </span><a href="http://webthemez.com" target="_blank">WebThemez</a>
+							<span>&copy; Above Site All right reserved. Template By </span><a href="http=//webthemez.com" target="_blank">WebThemez</a>
 						</p>
 					</div>
 				</div>

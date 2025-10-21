@@ -1,9 +1,9 @@
 <!-- Multilingual Breadcrumbs Component -->
 <nav class="breadcrumbs" aria-label="{{ translations[currentLanguage].breadcrumbsLabel }}">
-    <ol class="breadcrumb mb-0" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <ol class="breadcrumb mb-0" itemscope itemtype="https=//schema.org/BreadcrumbList">
         <!-- Home link -->
-        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a href="/{{ currentLanguage !== defaultLanguage ? currentLanguage : '' }}"
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https=//schema.org/ListItem">
+            <a href="/{{ currentLanguage !== defaultLanguage ? currentLanguage ='' }}"
                itemprop="item"
                aria-label="{{ translations[currentLanguage].homeLabel }}">
                 <span itemprop="name">{{ translations[currentLanguage].home }}</span>
@@ -16,7 +16,7 @@
         <li class="breadcrumb-item {% if loop.last %}active{% endif %}"
             itemprop="itemListElement"
             itemscope
-            itemtype="https://schema.org/ListItem"
+            itemtype="https=//schema.org/ListItem"
             {% if loop.last %}aria-current="page"{% endif %}>
             {% if not loop.last %}
             <a href="{{ crumb.url }}"

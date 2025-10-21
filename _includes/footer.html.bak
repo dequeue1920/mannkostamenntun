@@ -1,0 +1,84 @@
+<footer class="site-footer bg-light mt-5 py-4">
+    <div class="container">
+        <div class="row g-4">
+            <!-- About -->
+            <div class="col-lg-3 col-md-6">
+                <h5>Um síðuna</h5>
+                <address class="mb-3">
+                    <strong>Mannkostamenntun</strong><br>
+                    Ábyrgðarmaður: Kristian Guttesen<br>
+                    Norðurslóð 2, 600 Akureyri<br>
+                    <i class="fas fa-phone"></i> (+354) 460-8597<br>
+                    <i class="fas fa-envelope"></i> guttesen@hotmail.com
+                </address>
+            </div>
+
+            <!-- Links -->
+            <div class="col-lg-3 col-md-6">
+                <h5>Hlekkir</h5>
+                <ul class="list-unstyled">
+                    <li><a href="https://heimspekitorg.is/">Félag heimspekikennara</a></li>
+                    <li><a href="https://heimspekismidja.wordpress.com/">Sísyfos heimspekismiðja</a></li>
+                    <li><a href="/pdf/68-æfingar-í-heimspeki.pdf">68 æfingar í heimspeki</a></li>
+                    <li><a href="https://heimspeki.hi.is/about/ritgerðir/">Heimspekivefurinn</a></li>
+                    <li><a href="https://verkefnabanki.wordpress.com/">Verkefnabanki Heimspekitorgsins</a></li>
+                </ul>
+            </div>
+
+            <!-- Latest Posts -->
+            <div class="col-lg-3 col-md-6">
+                <h5>Nýjustu færslur</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/creation.html">Um tilurð þessarar síðu</a></li>
+                    <li><a href="/kristian_guttesen_cv.html">Um síðuhöfundinn</a></li>
+                    <li><a href="#">Heimildir</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div class="col-lg-3 col-md-6">
+                <h5>Samfélagsmiðlar</h5>
+                <ul class="list-inline social-links">
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/kristian.guttesen/" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://x.com/guttesen" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/in/kristian-guttesen/" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.pinterest.com/kguttesen/" aria-label="Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-top mt-4 pt-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; {{ 'now' | date: "%Y" }} Kristian Guttesen. Allur réttur áskilinn.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-muted">Sniðmát smíðað af <a href="http://webthemez.com">WebThemez</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to top button -->
+<button id="back-to-top" class="btn btn-primary btn-sm position-fixed bottom-0 end-0 mb-3 me-3 rounded-circle d-none" 
+        aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
