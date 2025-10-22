@@ -1,23 +1,23 @@
-{%- assign works = site.static_files | where_exp="f","f.path contains '/img/works/'" -%}
+{%- assign filter_type = include.type | default: 'web' -%}
+{%- assign filtered_items = site.portfolio | where_exp: "item", "item.type == '#{filter_type}'" -%}
 <ul id="thumbs" class="portfolio">
-{%- for file in works -%}
-  {%- capture fname -%}{{ file.path | split='/' | last }}{%- endcapture -%}
-  {%- assign base = fname | remove='.jpg' | remove='.png' -%}
-  <li class="item-thumbs col-lg-3" data-id="{{ forloop.index0 }}" data-type="{{ include.type | default: 'web' }}">
-    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio {{ forloop.index }}" href="{{ file.path | relative_url }}">
+{%- for item in filtered_items -%}
+  <li class="item-thumbs col-lg-3" data-id="{{ forloop.index0 }}" data-type="{{ item.type }}">
+    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{ item.title | default: 'Portfolio item' }}" href="{{ item.url | relative_url }}">
       <span class="overlay-img" aria-hidden="true"></span>
       <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code" aria-hidden="true"></i></span>
     </a>
     <figure class="portfolio-figure">
       <picture class="portfolio-img img-loading">
-        <source srcset="{{ file.path | replace=base, base | append='-320.avif' }}" type="image/avif" media="(max-width=320px)">
-        <source srcset="{{ file.path | replace=base, base | append='-640.avif' }}" type="image/avif" media="(max-width=640px)">
-        <source srcset="{{ file.path | replace=base, base | append='-960.avif' }}" type="image/avif" media="(max-width=960px)">
-        <source srcset="{{ file.path | replace=base, base | append='-320.webp' }}" type="image/webp" media="(max-width=320px)">
-        <source srcset="{{ file.path | replace=base, base | append='-640.webp' }}" type="image/webp" media="(max-width=640px)">
-        <source srcset="{{ file.path | replace=base, base | append='-960.webp' }}" type="image/webp" media="(max-width=960px)">
-        <img src="{{ file.path | relative_url }}" alt="Portfolio work {{ forloop.index }}" class="portfolio-img fade-in" loading="lazy">
-        {%- assign placeholder = file.path | replace=base, base | append='-placeholder.webp' -%}
+        {%- assign base = item.image | split: '/' | last | remove: '.jpg' | remove: '.png' -%}
+        <source srcset="{{ item.image | replace: base, base | append: '-320.avif' }}" type="image/avif" media="(max-width=320px)">
+        <source srcset="{{ item.image | replace: base, base | append: '-640.avif' }}" type="image/avif" media="(max-width=640px)">
+        <source srcset="{{ item.image | replace: base, base | append: '-960.avif' }}" type="image/avif" media="(max-width=960px)">
+        <source srcset="{{ item.image | replace: base, base | append: '-320.webp' }}" type="image/webp" media="(max-width=320px)">
+        <source srcset="{{ item.image | replace: base, base | append: '-640.webp' }}" type="image/webp" media="(max-width=640px)">
+        <source srcset="{{ item.image | replace: base, base | append: '-960.webp' }}" type="image/webp" media="(max-width=960px)">
+        <img src="{{ item.image | relative_url }}" alt="{{ item.title | default: 'Portfolio work' }}" class="portfolio-img fade-in" loading="lazy">
+        {%- assign placeholder = item.image | replace: base, base | append: '-placeholder.webp' -%}
         <img src="{{ placeholder | relative_url }}" class="img-placeholder" aria-hidden="true" alt="">
       </picture>
     </figure>
