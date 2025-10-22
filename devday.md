@@ -17,3 +17,8 @@ Notes=Image fallbacks reference files in `/img/` which already exist in the repo
 - Updated `index.html` to use `{{ '/portfolio/' | relative_url }}` instead of a static `portfolio.html` link.
 
 Notes=The `portfolio-items` include enumerates `site.static_files` for `/img/works/` and builds responsive `<picture>` elements using existing image variants (320/640/960 and placeholders). This keeps the markup data-driven and avoids duplication.
+
+- [x] Successful build: Workflow **Build and Deploy Jekyll Site** completed successfully.
+	Commit: `feat(layout): include language-switcher in header`
+	Status: ✅ Success
+	Timestamp: 2025-10-22 13:45
