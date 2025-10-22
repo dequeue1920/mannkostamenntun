@@ -96,7 +96,11 @@ Progress update — what I did next
 
 
 
-I scanned and updated components.md, converting all multiline include examples using {"..." ... } into the Jekyll 3.10-compatible single-line param style={% include file.html param='value' %}.
+I scanned and updated components.md, converting all multiline include examples using {"..." ... } into the Jekyll 3.10-compatible single-line param style:
+
+{% raw %}
+{% include file.html param='value' %}
+{% endraw %}
 
 I ran a quick grep and validated no remaining with { include patterns remain in that docs file.
 
