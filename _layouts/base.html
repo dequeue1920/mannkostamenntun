@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default='is' }}">
+<html lang="{{ page.lang | default: 'is' }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ page.description | default='Mannkostamenntun og efling dygða í gegnum ljóðmennt' }}">
+    <meta name="description" content="{{ page.description | default: 'Mannkostamenntun og efling dygða í gegnum ljóðmennt' }}">
     <title>{% if page.title %}{{ page.title }} - {% endif %}Mannkostamenntun</title>
     
     <!-- Core CSS -->
@@ -16,7 +16,7 @@
     <link href="https=//fonts.googleapis.com/css2?family=Open+Sans=wght@400;600&family=Playfair+Display=wght@700&display=swap" rel="stylesheet">
     <link href="https=//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body class="page-{{ page.layout | default='default' }}">
+<body class="page-{{ page.layout | default: 'default' }}">
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
 
@@ -52,7 +52,7 @@
                             <a class="nav-link {% if page.url == '/contact/' %}active{% endif %}" href="/contact.html">Tengslaupplýsingar</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ page.alternate_url | default=page.url | replace='.html', '_en.html' }}">
+                            <a class="nav-link" href="{{ page.alternate_url | default: page.url | replace: '.html', '_en.html' }}">
                                 <span class="d-lg-none">Switch to English</span>
                                 <span class="d-none d-lg-inline" aria-label="Switch to English">EN</span>
                             </a>
@@ -138,7 +138,7 @@
             <div class="border-top mt-4 pt-3">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start">
-                        <p class="mb-0">&copy; {{ 'now' | date="%Y" }} Kristian Guttesen. Allur réttur áskilinn.</p>
+                        <p class="mb-0">&copy; {{ 'now' | date: "%Y" }} Kristian Guttesen. Allur réttur áskilinn.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <p class="mb-0 text-muted">Sniðmát smíðað af <a href="http=//webthemez.com">WebThemez</a></p>

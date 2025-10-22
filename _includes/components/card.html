@@ -4,7 +4,7 @@
 
 <div class="card {{ card_class }} {% if include.class %}{{ include.class }}{% endif %}">
     {% if include.image %}
-    <img src="{{ include.image }}" class="card-img-top" alt="{{ include.image_alt | default=include.title }}">
+    <img src="{{ include.image }}" class="card-img-top" alt="{{ include.image_alt | default: include.title }}">
     {% endif %}
     
     {% if include.icon %}

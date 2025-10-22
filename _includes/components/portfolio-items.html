@@ -3,7 +3,7 @@
 {%- for file in works -%}
   {%- capture fname -%}{{ file.path | split='/' | last }}{%- endcapture -%}
   {%- assign base = fname | remove='.jpg' | remove='.png' -%}
-  <li class="item-thumbs col-lg-3" data-id="{{ forloop.index0 }}" data-type="{{ include.type | default='web' }}">
+  <li class="item-thumbs col-lg-3" data-id="{{ forloop.index0 }}" data-type="{{ include.type | default: 'web' }}">
     <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Portfolio {{ forloop.index }}" href="{{ file.path | relative_url }}">
       <span class="overlay-img" aria-hidden="true"></span>
       <span class="overlay-img-thumb"><i class="icon-info-blocks fa fa-code" aria-hidden="true"></i></span>

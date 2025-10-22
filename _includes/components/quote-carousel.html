@@ -1,4 +1,4 @@
-{% assign carousel_id = include.id | default="quoteCarousel" %}
+{% assign carousel_id = include.id | default: "quoteCarousel" %}
 
 <div id="{{ carousel_id }}" class="carousel slide" data-bs-ride="carousel">
     {% if include.title %}
