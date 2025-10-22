@@ -1,5 +1,5 @@
 {%- assign filter_type = include.type | default: 'web' -%}
-{%- assign filtered_items = site.portfolio | where_exp: "item", "item.type == '#{filter_type}'" -%}
+{%- assign filtered_items = site.portfolio | where: "type", filter_type -%}
 <ul id="thumbs" class="portfolio">
 {%- for item in filtered_items -%}
   <li class="item-thumbs col-lg-3" data-id="{{ forloop.index0 }}" data-type="{{ item.type }}">
