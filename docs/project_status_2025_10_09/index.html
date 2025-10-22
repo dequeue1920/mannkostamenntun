@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mannkostamenntun og efling dygða í gegnum ljóðmennt">
+    <title>Project Status Report - October 9, 2025 - Mannkostamenntun</title>
+    
+    <!-- Core CSS -->
+    <link href="https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https=//fonts.googleapis.com">
+    <link rel="preconnect" href="https=//fonts.gstatic.com" crossorigin>
+    <link href="https=//fonts.googleapis.com/css2?family=Open+Sans=wght@400;600&family=Playfair+Display=wght@700&display=swap" rel="stylesheet">
+    <link href="https=//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="page-page">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/logo.png" alt="Mannkostamenntun logo" width="158" height="auto">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " href="/">Heim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/about.html">Yfirlit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/courses.html">Kennsluefni</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/portfolio.html">Mannkostamenntun</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/pricing.html">Bækur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/contact.html">Tengslaupplýsingar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/docs/project_status_2025_10_09/">
+                                <span class="d-lg-none">Switch to English</span>
+                                <span class="d-none d-lg-inline" aria-label="Switch to English">EN</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="site-main">
+        <div class="container">
+    <div class="row">
+        <div class="col-12">
+            
+            <h1 class="page-title">Project Status Report - October 9, 2025</h1>
+            
+            
+            <h1 id="project-status-report---october-9-2025">Project Status Report - October 9, 2025</h1>
+<h2 id="website-modernization-project">Website Modernization Project</h2>
+
+<h3 id="executive-summary">Executive Summary</h3>
+<p>The project is currently in Phase 2 of the modernization effort, with significant progress made in establishing a modern CSS architecture and component migration. The team has successfully implemented Bootstrap 5 upgrades and established a robust foundation for future development.</p>
+
+<h3 id="current-status">Current Status</h3>
+
+<h4 id="1-completed-milestones">1. Completed Milestones</h4>
+<ul>
+  <li>✅ CSS Architecture Modernization
+    <ul>
+      <li>Implemented modular CSS structure with clear separation of concerns</li>
+      <li>Created comprehensive layout system</li>
+      <li>Added transition and animation framework</li>
+      <li>Established mobile-first utility system</li>
+    </ul>
+  </li>
+  <li>✅ Bootstrap 5 Migration (Partial)
+    <ul>
+      <li>Updated core navigation components</li>
+      <li>Implemented modern card system</li>
+      <li>Created responsive form components</li>
+      <li>Added modern utility classes</li>
+    </ul>
+  </li>
+  <li>✅ Component Development
+    <ul>
+      <li>Updated navbar with Bootstrap 5 conventions</li>
+      <li>Created responsive hero section</li>
+      <li>Implemented card system with hover effects</li>
+      <li>Developed form components with validation</li>
+      <li>Added quote carousel with modern styling</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="2-technical-infrastructure">2. Technical Infrastructure</h4>
+<p>Currently implemented=</p>
+<ul>
+  <li>Bootstrap 5.3.2 integration</li>
+  <li>Modern JavaScript (ES6+)</li>
+  <li>CSS Custom Properties</li>
+  <li>Mobile-first responsive design</li>
+  <li>Dark mode support</li>
+  <li>Accessibility enhancements</li>
+  <li>Print style optimization</li>
+</ul>
+
+<h4 id="3-code-architecture">3. Code Architecture</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>assets/
+├── css/
+│   ├── components.css    # Component-specific styles
+│   ├── layout.css       # Grid and spacing system
+│   ├── transitions.css  # Animation framework
+│   ├── utilities.css    # Utility classes
+│   └── main.css        # Core styles
+├── js/
+│   └── main.js         # Modern JavaScript
+</code></pre></div></div>
+
+<h3 id="critical-issues--risks">Critical Issues &amp; Risks</h3>
+
+<ol>
+  <li><strong>Technical Debt</strong>
+    <ul>
+      <li>Legacy jQuery dependencies still present</li>
+      <li>Some Bootstrap 3 classes remain in HTML</li>
+      <li>Image optimization pending</li>
+      <li>CSRF protection needed for forms</li>
+    </ul>
+  </li>
+  <li><strong>Performance Concerns</strong>
+    <ul>
+      <li>Asset bundling not implemented</li>
+      <li>Image optimization pending</li>
+      <li>No lazy loading strategy</li>
+      <li>Caching headers not configured</li>
+    </ul>
+  </li>
+  <li><strong>Security Issues</strong>
+    <ul>
+      <li>HTTP resources need HTTPS upgrade</li>
+      <li>Form validation needs server-side implementation</li>
+      <li>Security headers not configured</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="next-steps-priority-order">Next Steps (Priority Order)</h3>
+
+<ol>
+  <li><strong>Immediate Actions (Sprint 5)</strong>
+    <ul>
+      <li>Complete language switcher implementation</li>
+      <li>Implement CSRF protection</li>
+      <li>Document new CSS architecture</li>
+      <li>Create component usage examples</li>
+    </ul>
+  </li>
+  <li><strong>Short-term Goals (Sprint 6)</strong>
+    <ul>
+      <li>Optimize image assets</li>
+      <li>Implement asset bundling</li>
+      <li>Complete remaining Bootstrap 5 migrations</li>
+      <li>Add server-side form validation</li>
+    </ul>
+  </li>
+  <li><strong>Medium-term Objectives (Sprint 7-8)</strong>
+    <ul>
+      <li>Implement automated testing</li>
+      <li>Add CI/CD pipeline</li>
+      <li>Create comprehensive documentation</li>
+      <li>Perform security audit</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="resource-requirements">Resource Requirements</h3>
+
+<ol>
+  <li><strong>Development Tools</strong>
+    <ul>
+      <li>Webpack/Vite for asset bundling</li>
+      <li>Image optimization tools</li>
+      <li>Testing framework setup</li>
+      <li>CI/CD pipeline configuration</li>
+    </ul>
+  </li>
+  <li><strong>Documentation Needs</strong>
+    <ul>
+      <li>Component library documentation</li>
+      <li>Migration guides for developers</li>
+      <li>Accessibility guidelines</li>
+      <li>Testing procedures</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="recommendations">Recommendations</h3>
+
+<ol>
+  <li><strong>Technical Priorities</strong>
+    <ul>
+      <li>Complete jQuery removal</li>
+      <li>Implement build system</li>
+      <li>Add automated testing</li>
+      <li>Optimize assets</li>
+    </ul>
+  </li>
+  <li><strong>Process Improvements</strong>
+    <ul>
+      <li>Implement code review process</li>
+      <li>Add automated testing</li>
+      <li>Create documentation standards</li>
+      <li>Set up monitoring</li>
+    </ul>
+  </li>
+  <li><strong>Security Enhancements</strong>
+    <ul>
+      <li>Implement HTTPS</li>
+      <li>Add security headers</li>
+      <li>Implement CSRF protection</li>
+      <li>Add rate limiting</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="timeline--milestones">Timeline &amp; Milestones</h3>
+
+<h4 id="phase-2-current---component-migration">Phase 2 (Current) - Component Migration</h4>
+<ul>
+  <li>Week 1 (Completed)=CSS Architecture</li>
+  <li>Week 2 (In Progress)=Component Updates</li>
+  <li>Week 3=Testing &amp; Documentation</li>
+  <li>Week 4=Security Implementation</li>
+</ul>
+
+<h4 id="phase-3-upcoming---page-migration">Phase 3 (Upcoming) - Page Migration</h4>
+<ul>
+  <li>Week 5=Home Page Update</li>
+  <li>Week 6=Content Pages</li>
+  <li>Week 7=Special Pages</li>
+  <li>Week 8=Testing &amp; Optimization</li>
+</ul>
+
+<h3 id="metrics--kpis">Metrics &amp; KPIs</h3>
+
+<ol>
+  <li><strong>Performance</strong>
+    <ul>
+      <li>Lighthouse scores</li>
+      <li>Page load times</li>
+      <li>First Contentful Paint</li>
+      <li>Largest Contentful Paint</li>
+    </ul>
+  </li>
+  <li><strong>Code Quality</strong>
+    <ul>
+      <li>Test coverage</li>
+      <li>Accessibility score</li>
+      <li>Security audit results</li>
+      <li>Technical debt metrics</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>The project has made significant progress in modernizing the codebase, particularly in CSS architecture and component development. The next phase should focus on completing the migration, implementing security measures, and establishing robust testing and documentation practices.</p>
+
+<hr />
+
+<p>Last Updated=October 9, 2025
+Author=GitHub Copilot
+Project Status=Phase 2 - In Progress</p>
+
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-light mt-5 py-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- About -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Um síðuna</h5>
+                    <address class="mb-3">
+                        <strong>Mannkostamenntun</strong><br>
+                        Ábyrgðarmaður=Kristian Guttesen<br>
+                        Norðurslóð 2, 600 Akureyri<br>
+                        <i class="fas fa-phone"></i> (+354) 460-8597<br>
+                        <i class="fas fa-envelope"></i> guttesen@hotmail.com
+                    </address>
+                </div>
+
+                <!-- Links -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Hlekkir</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https=//heimspekitorg.is/">Félag heimspekikennara</a></li>
+                        <li><a href="https=//heimspekismidja.wordpress.com/">Sísyfos heimspekismiðja</a></li>
+                        <li><a href="/pdf/68-æfingar-í-heimspeki.pdf">68 æfingar í heimspeki</a></li>
+                        <li><a href="https=//heimspeki.hi.is/about/ritgerðir/">Heimspekivefurinn</a></li>
+                        <li><a href="https=//verkefnabanki.wordpress.com/">Verkefnabanki Heimspekitorgsins</a></li>
+                    </ul>
+                </div>
+
+                <!-- Latest Posts -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Nýjustu færslur</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/creation.html">Um tilurð þessarar síðu</a></li>
+                        <li><a href="/kristian_guttesen_cv.html">Um síðuhöfundinn</a></li>
+                        <li><a href="#">Heimildir</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Samfélagsmiðlar</h5>
+                    <ul class="list-inline social-links">
+                        <li class="list-inline-item">
+                            <a href="https=//www.facebook.com/kristian.guttesen/" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//x.com/guttesen" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//www.linkedin.com/in/kristian-guttesen/" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//www.pinterest.com/kguttesen/" aria-label="Pinterest">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-top mt-4 pt-3">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">&copy; 2025 Kristian Guttesen. Allur réttur áskilinn.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0 text-muted">Sniðmát smíðað af <a href="http=//webthemez.com">WebThemez</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="btn btn-primary btn-sm position-fixed bottom-0 end-0 mb-3 me-3 rounded-circle d-none" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Core JavaScript -->
+    <script src="https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

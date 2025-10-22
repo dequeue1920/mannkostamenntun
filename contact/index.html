@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mannkostamenntun og efling dygða í gegnum ljóðmennt</title>
+  
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header>
+    <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/img/logo.png" alt="Mannkostamenntun logo" width="158" height="auto">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+                    aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/">Heim</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/about.html">Yfirlit</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/courses.html">Kennsluefni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/portfolio.html">Mannkostamenntun</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/pricing.html">Bækur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/contact.html">Tengslaupplýsingar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact/">
+                            <span class="d-lg-none">Switch to English</span>
+                            <span class="d-none d-lg-inline" aria-label="Switch to English">EN</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <!-- Language Switcher Component -->
+<div class="language-switcher dropdown">
+    <button class="btn btn-link dropdown-toggle" 
+            type="button" 
+            id="languageDropdown" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false"
+            aria-label="">
+        <span class="d-none d-sm-inline"></span>
+        <span class="d-inline d-sm-none"></span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+        <li>
+            <a class="dropdown-item " 
+               href="/contact/"
+               lang="is"
+               hreflang="is"
+               aria-current="">
+                <span class="fi fi-is me-2"></span>
+                Íslenska
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item "
+               href="/contact/"
+               lang="en"
+               hreflang="en"
+               aria-current="">
+                <span class="fi fi-gb me-2"></span>
+                English
+            </a>
+        </li>
+    </ul>
+</div>
+
+  </header>
+
+  <main role="main">
+    
+
+<section id="inner-headline">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="pageTitle">Hafa samband</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+	<section id="content">
+	
+	<div class="container">
+	<div class="row">
+ <div class="col-md-12">
+							 
+
+<iframe src="https=//www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1642.7900793182466!2d-18.1223199!3d65.685463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48d28faa7eca0bd3%3A0xfc9e0104592e1efe!2sUniversity%20of%20Akureyri!5e0!3m2!1sen!2sis!4v1759566476153!5m2!1sen!2sis" width="600" height="450" style="border=0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+								</div>
+</div>
+
+
+	<div class="row">
+								<div class="col-md-6">
+									<br>
+									<div class="alert alert-success hidden" id="contactSuccess">
+										<strong>Takk!</strong> Skilaboðin eru móttin. Við höfum samband.
+									</div>
+									<div class="alert alert-error hidden" id="contactError">
+										<strong>Villa!</strong> Ekki tókst að senda skilaboðin þín.
+									</div>
+<!-- Contact Form with CSRF Protection -->
+<form action="/api/contact" method="POST" class="needs-validation" novalidate>
+    <input type="hidden" name="_csrf" value="">
+    
+    <div class="row g-3">
+        <!-- Name Field -->
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="text" 
+                       class="form-control" 
+                       id="name" 
+                       name="name" 
+                       placeholder="Full Name" 
+                       required
+                       pattern="[A-Za-z\s]+"
+                       aria-label="Full Name">
+                <label for="name">Full Name</label>
+                <div class="invalid-feedback">
+                    Please enter your name using only letters and spaces.
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="col-md-6">
+            <div class="form-floating">
+                <input type="email" 
+                       class="form-control" 
+                       id="email" 
+                       name="email" 
+                       placeholder="Email Address" 
+                       required
+                       aria-label="Email Address">
+                <label for="email">Email Address</label>
+                <div class="invalid-feedback">
+                    Please enter a valid email address.
+                </div>
+            </div>
+        </div>
+
+        <!-- Subject Field -->
+        <div class="col-12">
+            <div class="form-floating">
+                <input type="text" 
+                       class="form-control" 
+                       id="subject" 
+                       name="subject" 
+                       placeholder="Subject" 
+                       required
+                       aria-label="Subject">
+                <label for="subject">Subject</label>
+                <div class="invalid-feedback">
+                    Please enter a subject for your message.
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Field -->
+        <div class="col-12">
+            <div class="form-floating">
+                <textarea class="form-control" 
+                          id="message" 
+                          name="message" 
+                          placeholder="Your Message" 
+                          style="height=150px" 
+                          required
+                          aria-label="Your Message"></textarea>
+                <label for="message">Your Message</label>
+                <div class="invalid-feedback">
+                    Please enter your message.
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-12">
+            <button class="btn btn-primary w-100 py-3" type="submit">
+                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                <span class="btn-text">Send Message</span>
+            </button>
+        </div>
+    </div>
+</form>
+
+<!-- Form Validation Script -->
+<script>
+(function() {
+    'use strict';
+
+    const forms = document.querySelectorAll('.needs-validation');
+    const submitButtons = document.querySelectorAll('button[type="submit"]');
+
+    // Get CSRF token from meta tag
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
+
+    // Form submission handler
+    async function handleSubmit(event) {
+        event.preventDefault();
+        const form = event.target;
+        
+        if (!form.checkValidity()) {
+            event.stopPropagation();
+            form.classList.add('was-validated');
+            return;
+        }
+
+        const button = form.querySelector('button[type="submit"]');
+        const spinner = button.querySelector('.spinner-border');
+        const btnText = button.querySelector('.btn-text');
+
+        // Show loading state
+        button.disabled = true;
+        spinner.classList.remove('d-none');
+        btnText.textContent = 'Sending...';
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method='POST',
+                body=formData,
+                headers={
+                    'X-CSRF-Token'=csrfToken
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            // Show success message
+            form.reset();
+            form.classList.remove('was-validated');
+            showAlert('success', 'Message sent successfully!');
+
+        } catch (error) {
+            showAlert('danger', 'Failed to send message. Please try again.');
+        } finally {
+            // Reset button state
+            button.disabled = false;
+            spinner.classList.add('d-none');
+            btnText.textContent = 'Send Message';
+        }
+    }
+
+    // Add submit handlers to all forms
+    forms.forEach(form => {
+        form.addEventListener('submit', handleSubmit);
+    });
+
+    // Alert helper function
+    function showAlert(type, message) {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+        alertDiv.role = 'alert';
+        alertDiv.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+        
+        const form = document.querySelector('form');
+        form.parentNode.insertBefore(alertDiv, form);
+
+        // Auto dismiss after 5 seconds
+        setTimeout(() => {
+            alertDiv.remove();
+        }, 5000);
+    }
+})();
+</script>
+
+								</div>
+								<div class="col-md-6">
+								
+
+
+
+
+<div class="span4">
+    <div class="title-box clearfix">
+        <h3 class="title-box_primary">Hafa samband</h3>
+    </div>
+    <h5>Sendu okkur línu</h5>
+    <p>Við tökum ábendingum fagnandi.<br></p>
+    <address>
+        <strong><a href="/kristian_guttesen_cv.html">Kristian Guttesen</a><br>
+        Norðurslóð 2,<br>
+        600 Akureyri</strong><br>
+        Sími=+354 460 8597<br>
+        Netfang=guttesen (hjá) hotmail.com<br>
+    </address>
+</div>
+
+								</div>
+							</div>
+	</div>
+ 
+	</section>
+
+  </main>
+
+  <footer>
+    <footer class="site-footer bg-light mt-5 py-4">
+    <div class="container">
+        <div class="row g-4">
+            <!-- About -->
+            <div class="col-lg-3 col-md-6">
+                <h5>Um síðuna</h5>
+                <address class="mb-3">
+                    <strong>Mannkostamenntun</strong><br>
+                    Ábyrgðarmaður=Kristian Guttesen<br>
+                    Norðurslóð 2, 600 Akureyri<br>
+                    <i class="fas fa-phone"></i> (+354) 460-8597<br>
+                    <i class="fas fa-envelope"></i> guttesen@hotmail.com
+                </address>
+            </div>
+
+            <!-- Links -->
+            <div class="col-lg-3 col-md-6">
+                <h5>Hlekkir</h5>
+                <ul class="list-unstyled">
+                    <li><a href="https=//heimspekitorg.is/">Félag heimspekikennara</a></li>
+                    <li><a href="https=//heimspekismidja.wordpress.com/">Sísyfos heimspekismiðja</a></li>
+                    <li><a href="/pdf/68-æfingar-í-heimspeki.pdf">68 æfingar í heimspeki</a></li>
+                    <li><a href="https=//heimspeki.hi.is/about/ritgerðir/">Heimspekivefurinn</a></li>
+                    <li><a href="https=//verkefnabanki.wordpress.com/">Verkefnabanki Heimspekitorgsins</a></li>
+                </ul>
+            </div>
+
+            <!-- Latest Posts -->
+            <div class="col-lg-3 col-md-6">
+                <h5>Nýjustu færslur</h5>
+                <ul class="list-unstyled">
+                    <li><a href="/creation.html">Um tilurð þessarar síðu</a></li>
+                    <li><a href="/kristian_guttesen_cv.html">Um síðuhöfundinn</a></li>
+                    <li><a href="#">Heimildir</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div class="col-lg-3 col-md-6">
+                <h5>Samfélagsmiðlar</h5>
+                <ul class="list-inline social-links">
+                    <li class="list-inline-item">
+                        <a href="https=//www.facebook.com/kristian.guttesen/" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https=//x.com/guttesen" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https=//www.linkedin.com/in/kristian-guttesen/" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https=//www.pinterest.com/kguttesen/" aria-label="Pinterest">
+                            <i class="fab fa-pinterest-p"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-top mt-4 pt-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 Kristian Guttesen. Allur réttur áskilinn.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-muted">Sniðmát smíðað af <a href="http=//webthemez.com">WebThemez</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to top button -->
+<button id="back-to-top" class="btn btn-primary btn-sm position-fixed bottom-0 end-0 mb-3 me-3 rounded-circle d-none" 
+        aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+  </footer>
+
+  <!-- Optional=include site JS if present -->
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

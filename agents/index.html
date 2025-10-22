@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mannkostamenntun og efling dygða í gegnum ljóðmennt">
+    <title>Website Codebase Analysis and Modernization Guide - Mannkostamenntun</title>
+    
+    <!-- Core CSS -->
+    <link href="https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https=//fonts.googleapis.com">
+    <link rel="preconnect" href="https=//fonts.gstatic.com" crossorigin>
+    <link href="https=//fonts.googleapis.com/css2?family=Open+Sans=wght@400;600&family=Playfair+Display=wght@700&display=swap" rel="stylesheet">
+    <link href="https=//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="page-page">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/logo.png" alt="Mannkostamenntun logo" width="158" height="auto">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " href="/">Heim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/about.html">Yfirlit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/courses.html">Kennsluefni</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/portfolio.html">Mannkostamenntun</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/pricing.html">Bækur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/contact.html">Tengslaupplýsingar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/agents/">
+                                <span class="d-lg-none">Switch to English</span>
+                                <span class="d-none d-lg-inline" aria-label="Switch to English">EN</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="site-main">
+        <div class="container">
+    <div class="row">
+        <div class="col-12">
+            
+            <h1 class="page-title">Website Codebase Analysis and Modernization Guide</h1>
+            
+            
+            <h1 id="website-codebase-analysis-and-modernization-guide">Website Codebase Analysis and Modernization Guide</h1>
+
+<p>Last updated=2025-10-10</p>
+
+<h2 id="image-optimization-implementation-report">Image Optimization Implementation Report</h2>
+
+<h3 id="1-image-processing-results">1. Image Processing Results</h3>
+<ul>
+  <li>Successfully generated multiple formats (AVIF, WebP, original) for all images</li>
+  <li>Created responsive sizes (320px, 640px, 960px, 1200px, 1800px, 2400px)</li>
+  <li>Generated low-resolution placeholders for progressive loading</li>
+  <li>Optimized compression ratios=
+    <ul>
+      <li>AVIF=65 quality (best compression)</li>
+      <li>WebP=80 quality (balanced)</li>
+      <li>JPEG=75 quality (balanced)</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="responsive-image-system">Responsive Image System</h2>
+<hr />
+
+<h3 id="overview">Overview</h3>
+<p>The responsive image system automatically generates and serves optimized images in multiple formats (AVIF, WebP, and fallback) and sizes. This system integrates with Webpack for build-time optimization and provides a simple API for implementation.</p>
+
+<h3 id="usage-examples">Usage Examples</h3>
+
+<ol>
+  <li>Basic Usage with Data Attribute=
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> 
+ <span class="na">src=</span><span class="s">"path/to/image.jpg"</span>
+ <span class="na">alt=</span><span class="s">"Description"</span>
+ <span class="na">data-responsive-image</span>
+ <span class="na">class=</span><span class="s">"my-image-class"</span><span class="nt">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Custom Configuration=
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> 
+ <span class="na">src=</span><span class="s">"path/to/image.jpg"</span>
+ <span class="na">alt=</span><span class="s">"Description"</span>
+ <span class="na">data-responsive-image</span>
+ <span class="na">data-sizes=</span><span class="s">"(max-width=768px) 100vw, 50vw"</span>
+ <span class="na">data-lazy=</span><span class="s">"false"</span>
+ <span class="na">class=</span><span class="s">"hero-image"</span><span class="nt">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>JavaScript API=
+```javascript
+import { createResponsiveImage } from ‘./utils/responsiveImage’;</li>
+</ol>
+
+<p>const imageHTML = createResponsiveImage({
+    src=’path/to/image.jpg’,
+    alt=’Description’,
+    sizes=’(max-width=768px) 100vw, 960px’,
+    className=’hero-image’,
+    lazy=true
+});</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+### Features
+- Automatic generation of multiple image sizes (320px to 2400px)
+- Support for modern formats (AVIF, WebP)
+- Fallback for older browsers
+- Lazy loading support
+- Async decoding
+- Accessibility-first approach
+- Automatic initialization
+- Custom size configurations
+- Performance optimized
+
+### Quality Settings
+- AVIF=65 quality (best compression)
+- WebP=80 quality (balanced)
+- JPEG=75 quality (balanced)
+- PNG=80 quality (balanced)
+
+### Build Process
+The image optimization process is automated through npm scripts=
+
+```bash
+# Process all images
+npm run process-images
+
+# Full build including image processing
+npm run build
+</code></pre></div></div>
+
+<p>The process-images script=</p>
+<ol>
+  <li>Scans the img directory for images</li>
+  <li>Generates multiple sizes (320px to 2400px)</li>
+  <li>Creates WebP and AVIF versions</li>
+  <li>Generates low-res placeholders</li>
+  <li>Optimizes all formats</li>
+</ol>
+
+<h3 id="css-classes-and-components">CSS Classes and Components</h3>
+
+<h4 id="base-classes">Base Classes</h4>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Responsive base image */</span>
+<span class="nc">.responsive-img</span> <span class="p">{</span>
+    <span class="err">width=100%;</span>
+    <span class="err">height=auto;</span>
+    <span class="err">display=block;</span>
+    <span class="err">background=#f0f0f0;</span>
+<span class="p">}</span>
+
+<span class="c">/* Loading states */</span>
+<span class="nc">.img-loading</span> <span class="p">{</span>
+    <span class="err">position=relative;</span>
+    <span class="err">background=#f0f0f0;</span>
+    <span class="err">overflow=hidden;</span>
+<span class="p">}</span>
+
+<span class="c">/* Progressive loading */</span>
+<span class="nc">.img-placeholder</span> <span class="p">{</span>
+    <span class="err">filter=blur(10px);</span>
+    <span class="err">transform=scale(1.1);</span>
+    <span class="err">transition=filter</span> <span class="err">0.5s</span> <span class="err">cubic-bezier(0.4,</span> <span class="err">0,</span> <span class="err">0.2,</span> <span class="err">1),</span>
+                <span class="err">transform</span> <span class="err">0.5s</span> <span class="err">cubic-bezier(0.4,</span> <span class="err">0,</span> <span class="err">0.2,</span> <span class="err">1);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="component-classes">Component Classes</h4>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Hero images */</span>
+<span class="nc">.hero-img</span> <span class="p">{</span>
+    <span class="err">height=min(60vh,</span> <span class="err">600px);</span>
+    <span class="err">object-fit=cover;</span>
+    <span class="err">width=100%;</span>
+<span class="p">}</span>
+
+<span class="c">/* Card images */</span>
+<span class="nc">.card-img</span> <span class="p">{</span>
+    <span class="err">aspect-ratio=16/9;</span>
+    <span class="err">object-fit=cover;</span>
+    <span class="err">border-radius=4px;</span>
+    <span class="err">transition=transform</span> <span class="err">0.3s</span> <span class="err">ease;</span>
+<span class="p">}</span>
+
+<span class="c">/* Profile images */</span>
+<span class="nc">.profile-img</span> <span class="p">{</span>
+    <span class="err">aspect-ratio=1;</span>
+    <span class="err">object-fit=cover;</span>
+    <span class="err">border-radius=50%;</span>
+    <span class="err">box-shadow=0</span> <span class="err">2px</span> <span class="err">8px</span> <span class="err">rgba(0,</span> <span class="err">0,</span> <span class="err">0,</span> <span class="err">0.1);</span>
+<span class="p">}</span>
+
+<span class="c">/* Logo images */</span>
+<span class="nc">.logo-img</span> <span class="p">{</span>
+    <span class="err">height=auto;</span>
+    <span class="err">max-height=50px;</span>
+    <span class="err">max-width=200px;</span>
+<span class="p">}</span>
+
+<span class="c">/* Thumbnail images */</span>
+<span class="nc">.thumbnail-img</span> <span class="p">{</span>
+    <span class="err">aspect-ratio=4/3;</span>
+    <span class="err">object-fit=cover;</span>
+    <span class="err">border-radius=2px;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="animations-and-effects">Animations and Effects</h4>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Fade in animation */</span>
+<span class="nc">.fade-in</span> <span class="p">{</span>
+    <span class="err">opacity=0;</span>
+    <span class="err">transition=opacity</span> <span class="err">0.5s</span> <span class="err">cubic-bezier(0.4,</span> <span class="err">0,</span> <span class="err">0.2,</span> <span class="err">1);</span>
+    <span class="err">will-change=opacity;</span>
+<span class="p">}</span>
+
+<span class="c">/* Loading shimmer */</span>
+<span class="nc">.img-loading</span><span class="o">==</span><span class="nt">before</span> <span class="p">{</span>
+    <span class="err">content="";</span>
+    <span class="err">position=absolute;</span>
+    <span class="err">background=linear-gradient(</span>
+        <span class="err">90deg,</span>
+        <span class="err">transparent</span> <span class="err">0%,</span>
+        <span class="err">rgba(255,</span> <span class="err">255,</span> <span class="err">255,</span> <span class="err">0.4)</span> <span class="err">50%,</span>
+        <span class="err">transparent</span> <span class="err">100%</span>
+    <span class="err">);</span>
+    <span class="err">animation=loading-shimmer</span> <span class="err">1.5s</span> <span class="err">infinite;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="accessibility-features">Accessibility Features</h4>
+<ul>
+  <li>Reduced motion support</li>
+  <li>High contrast mode compatibility</li>
+  <li>Progressive enhancement</li>
+  <li>Proper ARIA attributes</li>
+  <li>Meaningful alt text</li>
+</ul>
+
+<h3 id="usage-guidelines">Usage Guidelines</h3>
+
+<ol>
+  <li>Basic Image=
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> 
+ <span class="na">src=</span><span class="s">"image.jpg"</span>
+ <span class="na">alt=</span><span class="s">"Description"</span>
+ <span class="na">data-responsive-image</span>
+ <span class="na">class=</span><span class="s">"responsive-img"</span><span class="nt">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Hero Image=
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> 
+ <span class="na">src=</span><span class="s">"hero.jpg"</span>
+ <span class="na">alt=</span><span class="s">"Hero description"</span>
+ <span class="na">data-responsive-image</span>
+ <span class="na">data-sizes=</span><span class="s">"100vw"</span>
+ <span class="na">class=</span><span class="s">"hero-img fade-in"</span><span class="nt">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Card Image=
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> 
+ <span class="na">src=</span><span class="s">"card.jpg"</span>
+ <span class="na">alt=</span><span class="s">"Card description"</span>
+ <span class="na">data-responsive-image</span>
+ <span class="na">data-sizes=</span><span class="s">"(max-width=768px) 100vw, 33vw"</span>
+ <span class="na">class=</span><span class="s">"card-img fade-in"</span><span class="nt">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Profile Image=
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> 
+ <span class="na">src=</span><span class="s">"profile.jpg"</span>
+ <span class="na">alt=</span><span class="s">"Profile description"</span>
+ <span class="na">data-responsive-image</span>
+ <span class="na">class=</span><span class="s">"profile-img fade-in"</span><span class="nt">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="best-practices">Best Practices</h3>
+
+<ol>
+  <li>Always provide meaningful alt text</li>
+  <li>Use appropriate size hints=
+    <ul>
+      <li>Full width=”100vw”</li>
+      <li>Columns=”(max-width=768px) 100vw, 50vw”</li>
+      <li>Cards=”(max-width=768px) 100vw, 33vw”</li>
+    </ul>
+  </li>
+  <li>Choose appropriate classes=
+    <ul>
+      <li>hero-img=For large hero images</li>
+      <li>card-img=For card/thumbnail images</li>
+      <li>profile-img=For profile pictures</li>
+      <li>logo-img=For logos</li>
+    </ul>
+  </li>
+  <li>Performance tips=
+    <ul>
+      <li>Use lazy loading for below-the-fold images</li>
+      <li>Provide size hints for optimal loading</li>
+      <li>Enable blur-up loading with img-placeholder</li>
+      <li>Use fade-in class for smooth appearance</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="updated-codebase-structure-october-9-2025">Updated Codebase Structure (October 9, 2025)</h2>
+<hr />
+
+<h3 id="directory-structure">Directory Structure</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>website-templates/
+├── src/
+│   ├── js/
+│   │   ├── main.js              # Main JavaScript entry
+│   │   ├── components/          # Component JavaScript
+│   │   └── utils/              # Utility functions
+│   │
+│   ├── css/
+│   │   ├── main.css            # Main stylesheet
+│   │   ├── components.css      # Component styles
+│   │   ├── layout.css         # Layout system
+│   │   ├── transitions.css    # Animation system
+│   │   └── utilities.css      # Utility classes
+│   │
+│   └── assets/
+│       ├── images/            # Optimized images
+│       └── fonts/            # Web fonts
+│
+├── _layouts/                  # Template files
+│   ├── base.html             # Base template
+│   ├── page.html             # Page template
+│   └── home.html             # Home template
+│
+├── _includes/                # Components
+│   ├── components/          # UI Components
+│   │   ├── language-switcher.html
+│   │   ├── nav.html
+│   │   └── hero.html
+│   └── shared/             # Shared elements
+│
+├── middleware/              # Server middleware
+│   └── csrf.js            # CSRF protection
+│
+├── tests/                  # Test files
+│   ├── unit/
+│   ├── integration/
+│   └── a11y/
+│
+└── config/                 # Configuration files
+    ├── webpack.config.js
+    ├── jest.config.js
+    └── postcss.config.js
+
+</code></pre></div></div>
+<p>├── HTML Pages (Multi-language)
+│   ├── index.html               # Main landing page
+│   ├── about.html/about_en.html # About pages (IS/EN)
+│   ├── courses.html/courses_en.html
+│   ├── contact.html            # Contact form
+│   ├── creation.html        <br />
+│   ├── kristian_guttesen_cv.html
+│   ├── portfolio.html
+│   └── pricing.html
+│
+├── Assets
+│   ├── css/
+│   │   ├── bootstrap.min.css    # Bootstrap 3.3.1
+│   │   ├── style.css           # Custom styles
+│   │   ├── flexslider.css      # Slider styles
+│   │   ├── fancybox/           # Lightbox styles
+│   │   └── custom-fonts.css
+│   │
+│   ├── js/
+│   │   ├── jquery.js           # jQuery base
+│   │   ├── bootstrap.min.js    # Bootstrap functionality
+│   │   ├── custom.js           # Custom scripts
+│   │   ├── animate.js          # Animation handlers
+│   │   ├── validate.js         # Form validation
+│   │   └── various plugins/    # Multiple jQuery plugins
+│   │
+│   ├── fonts/                  # Font assets
+│   ├── img/                    # Image assets
+│   └── pdf/                    # PDF documents</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+## Modernization Roadmap
+-----------------------
+
+### 1. Security &amp; Performance Improvements
+
+1. Update HTTP to HTTPS
+   - Replace all `http=//` resources with `https=//`
+   - Update Google HTML5 shim to secure version
+   - Add SSL certificate (contact hosting provider)
+
+2. Dependencies Modernization
+   - Replace Bootstrap 3.3.1 with Bootstrap 5.x
+   - Update jQuery to latest version or consider removing
+   - Add package manager (npm/yarn)
+   - Create package.json for dependency management
+
+3. Performance Optimization
+   - Minify and combine CSS files
+   - Minify and combine JavaScript files
+   - Optimize and compress images
+   - Implement lazy loading for images
+   - Add browser caching headers
+
+### 2. Code Structure Improvements
+
+1. Create build system
+   ```json
+   // package.json example
+   {
+     "scripts"={
+       "build"="webpack --mode production",
+       "dev"="webpack serve --mode development",
+       "lint"="eslint src/js",
+       "format"="prettier --write \"src/**/*.{js,css,html}\""
+     }
+   }
+</code></pre></div></div>
+
+<ol>
+  <li>Reorganize assets
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/
+├── js/
+├── css/
+├── images/
+└── fonts/
+</code></pre></div>    </div>
+  </li>
+  <li>Implement modern JS practices
+    <ul>
+      <li>Use ES6+ syntax</li>
+      <li>Add module bundler (Webpack/Vite)</li>
+      <li>Replace jQuery plugins with modern alternatives</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="3-accessibility-seo--internationalization">3. Accessibility, SEO &amp; Internationalization</h3>
+
+<ol>
+  <li>Add meta tags and language support
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"alternate"</span> <span class="na">hreflang=</span><span class="s">"en"</span> <span class="na">href=</span><span class="s">"/en/page"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"alternate"</span> <span class="na">hreflang=</span><span class="s">"is"</span> <span class="na">href=</span><span class="s">"/is/page"</span><span class="nt">&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Implement semantic HTML5 and ARIA
+    <ul>
+      <li>Replace generic divs with semantic elements</li>
+      <li>Comprehensive ARIA labeling system</li>
+      <li>Proper heading hierarchy</li>
+      <li>Language-specific attributes</li>
+      <li>Screen reader optimizations</li>
+    </ul>
+  </li>
+  <li>Add responsive images
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;picture&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">srcset=</span><span class="s">"img/hero-mobile.webp"</span> <span class="na">media=</span><span class="s">"(max-width=768px)"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img/hero.webp"</span> <span class="na">alt=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="4-image-optimization--asset-pipeline">4. Image Optimization &amp; Asset Pipeline</h3>
+
+<ol>
+  <li>Responsive Images
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;picture&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">type=</span><span class="s">"image/avif"</span> <span class="na">srcset=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;source</span> <span class="na">type=</span><span class="s">"image/webp"</span> <span class="na">srcset=</span><span class="s">"..."</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"..."</span> <span class="na">alt=</span><span class="s">"..."</span> <span class="na">loading=</span><span class="s">"lazy"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/picture&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Optimization Configuration
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">jpeg</span><span class="o">=</span><span class="p">{</span> <span class="nx">quality</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="nx">progressive</span><span class="o">=</span><span class="kc">true</span> <span class="p">},</span>
+  <span class="nx">webp</span><span class="o">=</span><span class="p">{</span> <span class="nx">quality</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="nx">nearLossless</span><span class="o">=</span><span class="kc">true</span> <span class="p">},</span>
+  <span class="nx">avif</span><span class="o">=</span><span class="p">{</span> <span class="nx">quality</span><span class="o">=</span><span class="mi">65</span><span class="p">,</span> <span class="nx">speed</span><span class="o">=</span><span class="mi">5</span> <span class="p">},</span>
+  <span class="nx">responsive</span><span class="o">=</span><span class="p">{</span>
+    <span class="nx">sizes</span><span class="o">=</span><span class="p">[</span><span class="mi">640</span><span class="p">,</span> <span class="mi">768</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="mi">1366</span><span class="p">,</span> <span class="mi">1920</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Build Pipeline Integration
+    <ul>
+      <li>Automatic responsive image generation</li>
+      <li>Format conversion (JPEG/PNG → WebP/AVIF)</li>
+      <li>Lazy loading implementation</li>
+      <li>Size optimization</li>
+      <li>Cache management</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="5-layout-system--mobile-first-strategy">5. Layout System &amp; Mobile-First Strategy</h3>
+
+<ol>
+  <li>Layout Architecture
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Mobile-First Breakpoints */</span>
+<span class="o">=</span><span class="nt">root</span> <span class="p">{</span>
+  <span class="err">--breakpoint-sm=576px;</span>
+  <span class="err">--breakpoint-md=768px;</span>
+  <span class="err">--breakpoint-lg=992px;</span>
+  <span class="err">--breakpoint-xl=1200px;</span>
+  <span class="err">--breakpoint-xxl=1400px;</span>
+<span class="p">}</span>
+
+<span class="c">/* Container System */</span>
+<span class="nc">.container-fluid-xl</span> <span class="p">{</span>
+  <span class="err">width=100%;</span>
+  <span class="err">max-width=var(--breakpoint-xl);</span>
+  <span class="err">margin=0</span> <span class="err">auto;</span>
+  <span class="err">padding=0</span> <span class="err">1rem;</span>
+<span class="p">}</span>
+
+<span class="c">/* Grid System */</span>
+<span class="nc">.grid</span> <span class="p">{</span>
+  <span class="err">display=grid;</span>
+  <span class="err">gap=var(--grid-gap,</span> <span class="err">1rem);</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Responsive Components
+    <ul>
+      <li>Mobile-first development approach</li>
+      <li>Progressive enhancement</li>
+      <li>Responsive images with srcset</li>
+      <li>Fluid typography system</li>
+      <li>Adaptive navigation patterns</li>
+    </ul>
+  </li>
+  <li>Performance Optimization
+    <ul>
+      <li>Lazy loading for images</li>
+      <li>Critical CSS extraction</li>
+      <li>Responsive asset loading</li>
+      <li>Mobile network considerations</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="5-development-workflow">5. Development Workflow</h3>
+
+<ol>
+  <li>Version Control
+    <ul>
+      <li>Add .gitignore</li>
+      <li>Set up GitHub Actions for CI/CD</li>
+      <li>Add commit hooks for linting</li>
+    </ul>
+  </li>
+  <li>Documentation
+    <ul>
+      <li>Add JSDoc comments</li>
+      <li>Create README.md with setup instructions</li>
+      <li>Document build process</li>
+    </ul>
+  </li>
+  <li>Testing
+    <ul>
+      <li>Add unit tests for JavaScript</li>
+      <li>Implement E2E tests</li>
+      <li>Add accessibility testing</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="multilingual-implementation">Multilingual Implementation</h3>
+
+<ol>
+  <li><strong>Router Configuration</strong>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">MultilingualRouter</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">defaultLanguage</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">is</span><span class="dl">'</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">supportedLanguages</span> <span class="o">=</span> <span class="p">[</span><span class="dl">'</span><span class="s1">is</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">en</span><span class="dl">'</span><span class="p">];</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">routes</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Map</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Language Detection</strong>
+    <ul>
+      <li>URL path analysis</li>
+      <li>User preferences</li>
+      <li>Browser language detection</li>
+      <li>Default fallback</li>
+    </ul>
+  </li>
+  <li><strong>Content Structure</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pages/
+├── is/
+│   ├── about.html
+│   └── courses.html
+└── en/
+    ├── about.html
+    └── courses.html
+</code></pre></div>    </div>
+  </li>
+  <li><strong>SEO Optimization</strong>
+    <ul>
+      <li>hreflang tags</li>
+      <li>Language-specific metadata</li>
+      <li>Alternate URLs</li>
+      <li>Canonical links</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="step-by-step-implementation-guide">Step-by-Step Implementation Guide</h3>
+
+<ol>
+  <li><strong>Initial Setup (Day 1)</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Initialize npm</span>
+npm init <span class="nt">-y</span>
+   
+<span class="c"># Install core dependencies</span>
+npm <span class="nb">install </span>bootstrap@5.3 @popperjs/core
+npm <span class="nb">install</span> <span class="nt">--save-dev</span> webpack webpack-cli
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Modernize JavaScript (Day 2-3)</strong>
+    <ul>
+      <li>Convert jQuery code to vanilla JS</li>
+      <li>Set up module bundling</li>
+      <li>Implement modern form validation</li>
+    </ul>
+  </li>
+  <li><strong>Update Styling (Day 4-5)</strong>
+    <ul>
+      <li>Migrate to Bootstrap 5</li>
+      <li>Implement CSS modules</li>
+      <li>Add responsive design fixes</li>
+    </ul>
+  </li>
+  <li><strong>Optimization (Day 6-7)</strong>
+    <ul>
+      <li>Set up asset optimization</li>
+      <li>Implement lazy loading</li>
+      <li>Add service worker for offline support</li>
+    </ul>
+  </li>
+  <li><strong>Testing &amp; Documentation (Day 8-10)</strong>
+    <ul>
+      <li>Write tests</li>
+      <li>Update documentation</li>
+      <li>Perform accessibility audit</li>
+    </ul>
+  </li>
+  <li><strong>Deployment</strong>
+    <ul>
+      <li>Set up CI/CD pipeline</li>
+      <li>Configure hosting</li>
+      <li>Set up monitoring</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="current-technical-debt">Current Technical Debt</h2>
+
+<ol>
+  <li>Outdated Dependencies
+    <ul>
+      <li>Bootstrap 3.3.1 (Current=5.3.x)</li>
+      <li>jQuery and multiple jQuery plugins</li>
+      <li>Insecure HTTP resources</li>
+    </ul>
+  </li>
+  <li>Performance Issues
+    <ul>
+      <li>Unminified assets</li>
+      <li>No asset bundling</li>
+      <li>Multiple separate HTTP requests</li>
+    </ul>
+  </li>
+  <li>Accessibility
+    <ul>
+      <li>Missing ARIA labels</li>
+      <li>Non-semantic HTML</li>
+      <li>No keyboard navigation support</li>
+    </ul>
+  </li>
+  <li>Development Workflow
+    <ul>
+      <li>No build process</li>
+      <li>Manual file management</li>
+      <li>Limited documentation</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Monitor this file for updates as modernization progresses.</p>
+
+<h2 id="bootstrap-3-to-5-migration-guide">Bootstrap 3 to 5 Migration Guide</h2>
+<hr />
+
+<h3 id="grid-system-changes">Grid System Changes</h3>
+
+<p>Current Bootstrap 3 classes found in templates and their Bootstrap 5 equivalents=</p>
+
+<ol>
+  <li>Column Classes
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bootstrap 3             Bootstrap 5
+-------------          -------------
+col-xs-*               col-*
+col-sm-*               col-sm-*
+col-md-*               col-md-*
+col-lg-*               col-lg-*
+</code></pre></div>    </div>
+  </li>
+  <li>Navigation Components
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bootstrap 3                    Bootstrap 5
+-------------                 -------------
+navbar-default                navbar-light
+navbar-static-top            fixed-top or sticky-top
+navbar-toggle                navbar-toggler
+navbar-collapse              navbar-collapse
+nav navbar-nav               navbar-nav
+</code></pre></div>    </div>
+  </li>
+  <li>Panels (Now Cards)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bootstrap 3             Bootstrap 5
+-------------          -------------
+panel                  card
+panel-heading          card-header
+panel-title            card-title
+panel-body             card-body
+panel-footer           card-footer
+panel-primary          bg-primary
+panel-default          bg-light
+</code></pre></div>    </div>
+  </li>
+  <li>Button Classes
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bootstrap 3             Bootstrap 5
+-------------          -------------
+btn-default            btn-secondary
+btn-xs                 btn-sm
+btn-group-justified    d-flex justify-content-between
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="required-html-updates">Required HTML Updates</h3>
+
+<ol>
+  <li>Navbar Structure
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Old (Bootstrap 3) --&gt;</span>
+<span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-default"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"navbar-header"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggle"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-bar"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+
+<span class="c">&lt;!-- New (Bootstrap 5) --&gt;</span>
+<span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"navbar navbar-expand-lg navbar-light"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggler"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"navbar-toggler-icon"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Form Updates
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Old (Bootstrap 3) --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"control-label"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- New (Bootstrap 5) --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mb-3"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">"form-label"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="javascript-component-changes">JavaScript Component Changes</h3>
+
+<ol>
+  <li>Data Attributes
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bootstrap 3             Bootstrap 5
+-------------          -------------
+data-toggle           data-bs-toggle
+data-target           data-bs-target
+data-dismiss          data-bs-dismiss
+</code></pre></div>    </div>
+  </li>
+  <li>Initialize Components
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Bootstrap 3</span>
+<span class="nx">$</span><span class="p">(</span><span class="dl">'</span><span class="s1">#myModal</span><span class="dl">'</span><span class="p">).</span><span class="nx">modal</span><span class="p">();</span>
+
+<span class="c1">// Bootstrap 5</span>
+<span class="kd">const</span> <span class="nx">modal</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">bootstrap</span><span class="p">.</span><span class="nx">Modal</span><span class="p">(</span><span class="dl">'</span><span class="s1">#myModal</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">modal</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="implementation-steps">Implementation Steps</h3>
+
+<ol>
+  <li>Update Dependencies=
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Remove old Bootstrap 3 CSS and JS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"css/bootstrap.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"js/bootstrap.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Add Bootstrap 5 --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Update Navigation=
+    <ul>
+      <li>Replace all <code class="language-plaintext highlighter-rouge">navbar-default</code> with <code class="language-plaintext highlighter-rouge">navbar-light</code> or <code class="language-plaintext highlighter-rouge">navbar-dark</code></li>
+      <li>Add <code class="language-plaintext highlighter-rouge">navbar-expand-*</code> classes to navbar</li>
+      <li>Update toggle button markup</li>
+    </ul>
+  </li>
+  <li>Convert Panels to Cards=
+    <ul>
+      <li>Replace all panel components with card equivalents</li>
+      <li>Update panel headings and bodies</li>
+    </ul>
+  </li>
+  <li>Update Grid System=
+    <ul>
+      <li>Review all <code class="language-plaintext highlighter-rouge">col-*</code> classes</li>
+      <li>Add container classes where needed</li>
+      <li>Consider using new flex utilities</li>
+    </ul>
+  </li>
+  <li>Forms and Buttons=
+    <ul>
+      <li>Update form-group to mb-3</li>
+      <li>Review button classes</li>
+      <li>Update input groups</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="testing-checklist">Testing Checklist</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Navigation responsiveness</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Card/Panel layouts</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Form submissions</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Modal dialogs</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Dropdown menus</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Grid system responsiveness</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Button states and styles</li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-light mt-5 py-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- About -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Um síðuna</h5>
+                    <address class="mb-3">
+                        <strong>Mannkostamenntun</strong><br>
+                        Ábyrgðarmaður=Kristian Guttesen<br>
+                        Norðurslóð 2, 600 Akureyri<br>
+                        <i class="fas fa-phone"></i> (+354) 460-8597<br>
+                        <i class="fas fa-envelope"></i> guttesen@hotmail.com
+                    </address>
+                </div>
+
+                <!-- Links -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Hlekkir</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https=//heimspekitorg.is/">Félag heimspekikennara</a></li>
+                        <li><a href="https=//heimspekismidja.wordpress.com/">Sísyfos heimspekismiðja</a></li>
+                        <li><a href="/pdf/68-æfingar-í-heimspeki.pdf">68 æfingar í heimspeki</a></li>
+                        <li><a href="https=//heimspeki.hi.is/about/ritgerðir/">Heimspekivefurinn</a></li>
+                        <li><a href="https=//verkefnabanki.wordpress.com/">Verkefnabanki Heimspekitorgsins</a></li>
+                    </ul>
+                </div>
+
+                <!-- Latest Posts -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Nýjustu færslur</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/creation.html">Um tilurð þessarar síðu</a></li>
+                        <li><a href="/kristian_guttesen_cv.html">Um síðuhöfundinn</a></li>
+                        <li><a href="#">Heimildir</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Samfélagsmiðlar</h5>
+                    <ul class="list-inline social-links">
+                        <li class="list-inline-item">
+                            <a href="https=//www.facebook.com/kristian.guttesen/" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//x.com/guttesen" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//www.linkedin.com/in/kristian-guttesen/" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//www.pinterest.com/kguttesen/" aria-label="Pinterest">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-top mt-4 pt-3">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">&copy; 2025 Kristian Guttesen. Allur réttur áskilinn.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0 text-muted">Sniðmát smíðað af <a href="http=//webthemez.com">WebThemez</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="btn btn-primary btn-sm position-fixed bottom-0 end-0 mb-3 me-3 rounded-circle d-none" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Core JavaScript -->
+    <script src="https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

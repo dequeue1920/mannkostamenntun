@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mannkostamenntun og efling dygða í gegnum ljóðmennt">
+    <title>Mannkostamenntun</title>
+    
+    <!-- Core CSS -->
+    <link href="https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https=//fonts.googleapis.com">
+    <link rel="preconnect" href="https=//fonts.gstatic.com" crossorigin>
+    <link href="https=//fonts.googleapis.com/css2?family=Open+Sans=wght@400;600&family=Playfair+Display=wght@700&display=swap" rel="stylesheet">
+    <link href="https=//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="page-page">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/logo.png" alt="Mannkostamenntun logo" width="158" height="auto">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " href="/">Heim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/about.html">Yfirlit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/courses.html">Kennsluefni</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/portfolio.html">Mannkostamenntun</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/pricing.html">Bækur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/contact.html">Tengslaupplýsingar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/This%20is%20the%20response%20from%20the%20JD_18x2025/">
+                                <span class="d-lg-none">Switch to English</span>
+                                <span class="d-none d-lg-inline" aria-label="Switch to English">EN</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="site-main">
+        <div class="container">
+    <div class="row">
+        <div class="col-12">
+            
+            
+            <p>This is the response from the Junior Developer=</p>
+
+<p>I’ll start by scanning components.md for include tags, update any {… … } occurrences to the param=’value’ format, commit, push, and then check CI. I’ll record a todo list and mark tasks in-progress as I work.</p>
+
+<p>Created 5 todos</p>
+
+<p>I’ll mark the first todo as in-progress and scan components.md for offending include tags.</p>
+
+<p>Starting (1/5) Scan file for include tags</p>
+
+<p>I’ll open components.md to find all include tags to update.</p>
+
+<p>Read components.md</p>
+
+<p>I’m going to=1) replace the multiline include examples in components.md with the Jekyll 3.10-compatible param=’value’ style, 2) commit and push the change. I’ll mark the todo items as I progress.</p>
+
+<p>components.md+5-30</p>
+
+<p>I’ll mark the refactor todo as completed and move to syntax checks and committing.</p>
+
+<p>Starting (3/5) Run quick syntax check</p>
+
+<p>I’ll run a quick grep to ensure there are no remaining with { patterns and that braces are balanced. This is a lightweight syntax check since Jekyll isn’t installed here.</p>
+
+<p>Searched text for with \{ (**/docs/**), 4 results</p>
+
+<p>C=\Users\guttesen\website-templates\efling-dygda-i-gegnum-ljodmennt\docs\Run actionsjekyll-build-pages@v1.txt</p>
+
+<p>C=\Users\guttesen\website-templates\efling-dygda-i-gegnum-ljodmennt\docs\Run actionsjekyll-build-pages@v1.txt</p>
+
+<p>C=\Users\guttesen\website-templates\efling-dygda-i-gegnum-ljodmennt\docs\Run actionsjekyll-build-pages@v1_18x2025.txt</p>
+
+<p>C=\Users\guttesen\website-templates\efling-dygda-i-gegnum-ljodmennt\docs\Run actionsjekyll-build-pages@v1_18x2025.txt</p>
+
+<p>The grep returned references to earlier run logs complaining about the invalid syntax in components.md, but no current matches of with { in components.md itself (the earlier replacements succeeded). I’ll now commit and push the change.</p>
+
+<p>git add docs/components.md; git commit -m “Fix include tag syntax for Jekyll 3.10.0 compatibility”; git push origin main</p>
+
+<p>I’ll mark the commit/push todo completed and then check GitHub Actions status. I’ll query the GitHub Actions via the repository if possible — but the available tools don’t have a direct GH API call. I can open the local .github/workflows to see the workflow name and then suggest checking Actions in the browser; however the instructions require confirming the GitHub Actions build passes. I’ll try to read .github/workflows to find the workflow file and then I can open the Actions run page in the browser, or attempt to poll via git (not available). I’ll update todo status accordingly.</p>
+
+<p>Starting (5/5) Confirm GitHub Actions build</p>
+
+<p>I’ll inspect the repository workflows to find the workflow name and any clues about the build; then I’ll provide instructions for verifying the Actions run or attempt to open the run URL.</p>
+
+<p>Searched for files matching **/.github/workflows/**, no matches</p>
+
+<p>No workflows found in the repository; GitHub Actions may still run via organization-level workflow or a different repo, but I can’t programmatically fetch the Actions status here. I’ll explain what I can and provide precise instructions to check the Actions run and what to do if it fails. Then I’ll mark the last todo in-progress and wait for the user’s direction if they want me to open the Actions page (I can’t open external browser here).</p>
+
+<p>Progress update — what I did next</p>
+
+<p>I scanned and updated components.md, converting all multiline include examples using {“…” … } into the Jekyll 3.10-compatible single-line param style:</p>
+
+<p>{% include file.html param=’value’ %}</p>
+
+<p>I ran a quick grep and validated no remaining with { include patterns remain in that docs file.</p>
+
+<p>I committed the change and pushed it to main with the requested commit message.</p>
+
+<p>What changed (summary)</p>
+
+<p>File=components.md</p>
+
+<p>Replaced examples for nav, hero, card, contact-form, and language-switcher includes so they use the older param format.</p>
+
+<p>The language-switcher example’s languages array was turned into a JSON-like string value for the languages parameter (Jekyll 3.x cannot accept real arrays inline in include parameters).</p>
+
+<p>Git commit and push</p>
+
+<p>Commit message used=”Fix include tag syntax for Jekyll 3.10.0 compatibility”</p>
+
+<p>Push destination=origin main</p>
+
+<p>Push completed successfully.</p>
+
+<p>CI / GitHub Actions status</p>
+
+<p>I tried to confirm the GitHub Actions run, but there are no workflow files under .github/workflows in this repo (I checked the workspace). Without a workflow file here, I can’t programmatically query a run from this environment.</p>
+
+<p>I also can’t access the GitHub web UI from this environment. To verify the build, please do one of the following=</p>
+
+<p>Open the repository Actions tab in your browser=https=//github.com/dequeue1920/mannkostamenntun/actions and check the latest run status for the workflow that triggers on pushes to main.</p>
+
+<p>If there is a repository workflow, it should show a run for the recent push. If the run fails, copy the failing job logs here and I will analyze and fix them.</p>
+
+<p>Notes and recommendations</p>
+
+<p>The replacement of arrays in include parameters to stringified JSON is a common workaround for Jekyll 3.x include limitations. If you need to pass complex data to includes, a safer approach is=</p>
+
+<p>Put structured data into _data/*.yml and reference it from includes,</p>
+
+<p>Or create small includes that accept a filename parameter that points to a YAML/JSON data file.</p>
+
+<p>If you prefer I also=</p>
+
+<p>convert languages example to use a _data/languages.yml sample and update the docs to show using include language-switcher.html languages=’languages.yml’, I can implement that.</p>
+
+<p>run a local Jekyll build here — but note earlier when I tried jekyll serve it failed because jekyll isn’t installed in the environment. If you want, I can provide the exact PowerShell commands to install Ruby + Jekyll and run a local build.</p>
+
+<p>What’s next (pick one)</p>
+
+<p>I can create a _data/languages.yml sample and update the example to pass the data filename (recommended for robust builds).</p>
+
+<p>I can modify other docs or template files if you have additional with { … } usage elsewhere.</p>
+
+<p>You can check the Actions run and paste any failing logs here for me to fix.</p>
+
+<p>If you’d like me to proceed automatically with option 1 (create _data/languages.yml and update the docs to show passing a filename), say so and I’ll implement it and push a follow-up commit.</p>
+
+
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-light mt-5 py-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- About -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Um síðuna</h5>
+                    <address class="mb-3">
+                        <strong>Mannkostamenntun</strong><br>
+                        Ábyrgðarmaður=Kristian Guttesen<br>
+                        Norðurslóð 2, 600 Akureyri<br>
+                        <i class="fas fa-phone"></i> (+354) 460-8597<br>
+                        <i class="fas fa-envelope"></i> guttesen@hotmail.com
+                    </address>
+                </div>
+
+                <!-- Links -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Hlekkir</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https=//heimspekitorg.is/">Félag heimspekikennara</a></li>
+                        <li><a href="https=//heimspekismidja.wordpress.com/">Sísyfos heimspekismiðja</a></li>
+                        <li><a href="/pdf/68-æfingar-í-heimspeki.pdf">68 æfingar í heimspeki</a></li>
+                        <li><a href="https=//heimspeki.hi.is/about/ritgerðir/">Heimspekivefurinn</a></li>
+                        <li><a href="https=//verkefnabanki.wordpress.com/">Verkefnabanki Heimspekitorgsins</a></li>
+                    </ul>
+                </div>
+
+                <!-- Latest Posts -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Nýjustu færslur</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/creation.html">Um tilurð þessarar síðu</a></li>
+                        <li><a href="/kristian_guttesen_cv.html">Um síðuhöfundinn</a></li>
+                        <li><a href="#">Heimildir</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Samfélagsmiðlar</h5>
+                    <ul class="list-inline social-links">
+                        <li class="list-inline-item">
+                            <a href="https=//www.facebook.com/kristian.guttesen/" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//x.com/guttesen" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//www.linkedin.com/in/kristian-guttesen/" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//www.pinterest.com/kguttesen/" aria-label="Pinterest">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-top mt-4 pt-3">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">&copy; 2025 Kristian Guttesen. Allur réttur áskilinn.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0 text-muted">Sniðmát smíðað af <a href="http=//webthemez.com">WebThemez</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="btn btn-primary btn-sm position-fixed bottom-0 end-0 mb-3 me-3 rounded-circle d-none" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Core JavaScript -->
+    <script src="https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

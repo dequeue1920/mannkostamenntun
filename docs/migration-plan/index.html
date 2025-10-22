@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mannkostamenntun og efling dygða í gegnum ljóðmennt">
+    <title>Website Migration Plan - Mannkostamenntun</title>
+    
+    <!-- Core CSS -->
+    <link href="https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https=//fonts.googleapis.com">
+    <link rel="preconnect" href="https=//fonts.gstatic.com" crossorigin>
+    <link href="https=//fonts.googleapis.com/css2?family=Open+Sans=wght@400;600&family=Playfair+Display=wght@700&display=swap" rel="stylesheet">
+    <link href="https=//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="page-page">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="/img/logo.png" alt="Mannkostamenntun logo" width="158" height="auto">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link " href="/">Heim</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/about.html">Yfirlit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/courses.html">Kennsluefni</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/portfolio.html">Mannkostamenntun</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/pricing.html">Bækur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/contact.html">Tengslaupplýsingar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/docs/migration-plan/">
+                                <span class="d-lg-none">Switch to English</span>
+                                <span class="d-none d-lg-inline" aria-label="Switch to English">EN</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="site-main">
+        <div class="container">
+    <div class="row">
+        <div class="col-12">
+            
+            <h1 class="page-title">Website Migration Plan</h1>
+            
+            
+            <h1 id="website-migration-plan">Website Migration Plan</h1>
+
+<h2 id="phase-1setup-foundation-days-1-2">Phase 1=Setup Foundation (Days 1-2)</h2>
+<hr />
+
+<h3 id="1-directory-structure">1. Directory Structure</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>website-templates/
+├── _layouts/               # Template files
+│   ├── base.html          # Main template
+│   ├── page.html          # Regular page template
+│   └── home.html          # Home page template
+├── assets/                # Reorganize static assets
+│   ├── css/
+│   │   ├── main.css      # New main styles
+│   │   └── vendor/       # Third-party CSS
+│   ├── js/
+│   │   ├── main.js       # New main JavaScript
+│   │   └── vendor/       # Third-party scripts
+│   ├── images/           # Optimized images
+│   └── fonts/            # Web fonts
+└── _includes/            # Reusable components
+    ├── header.html
+    ├── footer.html
+    ├── hero.html
+    └── nav.html
+</code></pre></div></div>
+
+<h3 id="2-core-files-setup">2. Core Files Setup</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Create base template</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Set up main.css</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Set up main.js</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Create include files for components</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Set up multilingual support structure</li>
+</ul>
+
+<h3 id="3-css-architecture-implementation-completed">3. CSS Architecture Implementation (Completed)</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Created modular CSS structure
+    <ul>
+      <li>components.css=Component-specific styles</li>
+      <li>main.css=Core styles and Bootstrap 5 integration</li>
+      <li>utilities.css=Utility classes and helpers</li>
+    </ul>
+  </li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Implemented CSS variables for theming</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Added dark mode support</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Created responsive utilities</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Added print styles</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Implemented accessibility enhancements</li>
+</ul>
+
+<h2 id="phase-2component-migration-days-3-4">Phase 2=Component Migration (Days 3-4)</h2>
+<hr />
+
+<h3 id="1-navigation">1. Navigation</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Update navbar to Bootstrap 5</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Add language switcher</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Implement mobile menu</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Add breadcrumbs</li>
+</ul>
+
+<h3 id="2-hero-section">2. Hero Section</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Create reusable hero component</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Optimize hero images</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add hero content variations</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Implement smooth transitions</li>
+</ul>
+
+<h3 id="3-content-blocks">3. Content Blocks</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Convert panels to cards</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Update grid system</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Implement feature boxes</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Style quote carousel</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add hover animations</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Implement responsive behaviors</li>
+</ul>
+
+<h3 id="4-forms">4. Forms</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Update contact form</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add form validation</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Implement CSRF protection</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add success/error messages</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add floating labels</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Implement focus states</li>
+</ul>
+
+<h2 id="phase-3page-migration-days-5-7">Phase 3=Page Migration (Days 5-7)</h2>
+<hr />
+
+<h3 id="1-home-page">1. Home Page</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Implement new hero slider</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Update feature sections</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Add testimonials carousel</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Optimize course preview section</li>
+</ul>
+
+<h3 id="2-content-pages">2. Content Pages</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />About page (about.html, about_en.html)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Courses pages (courses.html, courses_en.html)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Portfolio page</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Contact page</li>
+</ul>
+
+<h3 id="3-special-pages">3. Special Pages</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />CV page</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Pricing/Books page</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Creation page</li>
+</ul>
+
+<h2 id="phase-4optimization--testing-days-8-9">Phase 4=Optimization &amp; Testing (Days 8-9)</h2>
+<hr />
+
+<h3 id="1-performance">1. Performance</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Optimize images</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Minify CSS/JS</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Implement lazy loading</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Add browser caching</li>
+</ul>
+
+<h3 id="2-accessibility">2. Accessibility</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add ARIA labels</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Implement keyboard navigation</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Test with screen readers</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Add skip links</li>
+</ul>
+
+<h3 id="3-testing">3. Testing</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cross-browser testing</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Mobile responsiveness</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Form validation</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Language switching</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Set up Jest and jest-axe for automated accessibility testing</li>
+</ul>
+
+<h2 id="phase-5launch-preparation-day-10">Phase 5=Launch Preparation (Day 10)</h2>
+<hr />
+
+<h3 id="1-pre-launch-checklist">1. Pre-launch Checklist</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />SEO meta tags</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Favicon package</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />404 page</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Robots.txt</li>
+</ul>
+
+<h3 id="2-documentation">2. Documentation</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Update README.md</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Document component usage</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Add maintenance guide</li>
+</ul>
+
+<h3 id="3-backup">3. Backup</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Create backup of old site</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Document rollback procedure</li>
+</ul>
+
+<h2 id="implementation-notes">Implementation Notes</h2>
+
+<h3 id="priority-components">Priority Components</h3>
+<ol>
+  <li>Navigation bar (highest priority)</li>
+  <li>Hero section</li>
+  <li>Card components</li>
+  <li>Footer</li>
+  <li>Forms</li>
+</ol>
+
+<h3 id="shared-elements-to-update">Shared Elements to Update</h3>
+<ol>
+  <li>Typography</li>
+  <li>Color scheme</li>
+  <li>Button styles</li>
+  <li>Spacing system</li>
+  <li>Grid layout</li>
+</ol>
+
+<h3 id="migration-strategy">Migration Strategy</h3>
+<ol>
+  <li>Create new components</li>
+  <li>Test on development</li>
+  <li>Apply to one page</li>
+  <li>Review and adjust</li>
+  <li>Roll out to other pages</li>
+</ol>
+
+<h3 id="testing-requirements">Testing Requirements</h3>
+<ul>
+  <li>Mobile-first approach</li>
+  <li>Cross-browser compatibility</li>
+  <li>Accessibility compliance</li>
+  <li>Performance metrics</li>
+  <li>Multi-language support</li>
+</ul>
+
+<h2 id="rollout-strategy">Rollout Strategy</h2>
+
+<h3 id="stage-1development">Stage 1=Development</h3>
+<ul>
+  <li>Set up development environment</li>
+  <li>Create new components</li>
+  <li>Test functionality</li>
+</ul>
+
+<h3 id="stage-2content-migration">Stage 2=Content Migration</h3>
+<ul>
+  <li>Move content to new templates</li>
+  <li>Update images and assets</li>
+  <li>Implement language versions</li>
+</ul>
+
+<h3 id="stage-3testing">Stage 3=Testing</h3>
+<ul>
+  <li>User testing</li>
+  <li>Performance testing</li>
+  <li>Accessibility testing</li>
+  <li>Cross-browser testing</li>
+</ul>
+
+<h3 id="stage-4launch">Stage 4=Launch</h3>
+<ul>
+  <li>Final checks</li>
+  <li>Deploy new version</li>
+  <li>Monitor analytics</li>
+  <li>Gather feedback</li>
+</ul>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<ol>
+  <li>Begin with Phase 1 setup</li>
+  <li>Create sample page using new components</li>
+  <li>Review with stakeholders</li>
+  <li>Proceed with full implementation</li>
+</ol>
+
+<p>Monitor this document for updates as implementation progresses.</p>
+
+<h2 id="progress-summary-october-9-2025">Progress Summary (October 9, 2025)</h2>
+
+<h3 id="todays-achievements-october-9">Today’s Achievements (October 9)</h3>
+<ol>
+  <li>Enhanced CSS Architecture=
+    <ul>
+      <li>Created layout.css for structured grid systems and spacing</li>
+      <li>Added transitions.css for animations and interactive behaviors</li>
+      <li>Expanded utilities.css with mobile-first patterns</li>
+      <li>Implemented comprehensive responsive system</li>
+    </ul>
+  </li>
+  <li>Layout System Implementation=
+    <ul>
+      <li>Created flexible grid system with responsive breakpoints</li>
+      <li>Added masonry grid support</li>
+      <li>Implemented sidebar layouts</li>
+      <li>Added two-dimensional grid capabilities</li>
+      <li>Created container system with fluid options</li>
+    </ul>
+  </li>
+  <li>Transitions &amp; Animations=
+    <ul>
+      <li>Implemented standardized transition system</li>
+      <li>Added customizable animation keyframes</li>
+      <li>Created timing function utilities</li>
+      <li>Added reduced motion support</li>
+      <li>Implemented animation control classes</li>
+    </ul>
+  </li>
+  <li>Enhanced Utility System=
+    <ul>
+      <li>Added mobile-first typography scale</li>
+      <li>Implemented responsive spacing utilities</li>
+      <li>Created comprehensive visibility helpers</li>
+      <li>Added screen reader utilities</li>
+      <li>Enhanced overflow controls</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="previous-completed-tasks-october-8">Previous Completed Tasks (October 8)</h3>
+<ol>
+  <li>Created initial CSS architecture=
+    <ul>
+      <li>Modular structure with components.css, main.css, and utilities.css</li>
+      <li>Implemented CSS variables for theming</li>
+      <li>Added dark mode support</li>
+      <li>Created print styles</li>
+      <li>Added accessibility enhancements</li>
+    </ul>
+  </li>
+  <li>Component Development=
+    <ul>
+      <li>Updated navbar with Bootstrap 5</li>
+      <li>Created responsive hero section</li>
+      <li>Implemented card system with hover effects</li>
+      <li>Added form components with validation</li>
+      <li>Created quote carousel</li>
+      <li>Added responsive utilities</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="technical-achievements">Technical Achievements</h3>
+<ul>
+  <li>Successfully migrated from Bootstrap 3.3.1 to 5.3.0</li>
+  <li>Implemented mobile-first responsive design</li>
+  <li>Added dark mode support via prefers-color-scheme</li>
+  <li>Created comprehensive utility classes system</li>
+  <li>Enhanced accessibility features</li>
+  <li>Optimized print styles</li>
+</ul>
+
+<h3 id="css-architecture-overview">CSS Architecture Overview</h3>
+<ol>
+  <li>Layout System (layout.css)=
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">assets</span><span class="o">/</span><span class="nt">css</span><span class="o">/</span>
+<span class="err">└──</span> <span class="nt">layout</span><span class="nc">.css</span>
+   <span class="err">├──</span> <span class="nt">Grid</span> <span class="nt">System</span>
+   <span class="err">├──</span> <span class="nt">Container</span> <span class="nt">Utilities</span>
+   <span class="err">├──</span> <span class="nt">Spacing</span> <span class="nt">System</span>
+   <span class="err">├──</span> <span class="nt">Masonry</span> <span class="nt">Grid</span>
+   <span class="err">└──</span> <span class="nt">Sidebar</span> <span class="nt">Layouts</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Transitions System (transitions.css)=
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">assets</span><span class="o">/</span><span class="nt">css</span><span class="o">/</span>
+<span class="err">└──</span> <span class="nt">transitions</span><span class="nc">.css</span>
+   <span class="err">├──</span> <span class="nt">Base</span> <span class="nt">Transitions</span>
+   <span class="err">├──</span> <span class="nt">Animation</span> <span class="nt">Keyframes</span>
+   <span class="err">├──</span> <span class="nt">Duration</span> <span class="nt">Modifiers</span>
+   <span class="err">├──</span> <span class="nt">Timing</span> <span class="nt">Functions</span>
+   <span class="err">└──</span> <span class="nt">Reduced</span> <span class="nt">Motion</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Enhanced Utilities (utilities.css)=
+    <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">assets</span><span class="o">/</span><span class="nt">css</span><span class="o">/</span>
+<span class="err">└──</span> <span class="nt">utilities</span><span class="nc">.css</span>
+   <span class="err">├──</span> <span class="nt">Mobile-First</span> <span class="nt">Typography</span>
+   <span class="err">├──</span> <span class="nt">Responsive</span> <span class="nt">Spacing</span>
+   <span class="err">├──</span> <span class="nt">Display</span> <span class="o">&amp;</span> <span class="nt">Visibility</span>
+   <span class="err">├──</span> <span class="nt">Screen</span> <span class="nt">Reader</span> <span class="nt">Utilities</span>
+   <span class="err">└──</span> <span class="nt">Overflow</span> <span class="nt">Controls</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="next-priority-tasks">Next Priority Tasks</h3>
+<ol>
+  <li>Document new CSS architecture</li>
+  <li>Create usage examples for layout system</li>
+  <li>Test transitions across browsers</li>
+  <li>Implement layout patterns in components</li>
+  <li>Create responsive layout documentation</li>
+  <li>Complete language switcher implementation</li>
+  <li>Optimize image assets</li>
+  <li>Implement CSRF protection</li>
+</ol>
+
+<h3 id="notes-for-review">Notes for Review</h3>
+<ul>
+  <li>Enhanced CSS architecture with clear separation of concerns</li>
+  <li>Layout system provides flexible, responsive patterns</li>
+  <li>Transition system supports smooth interactions</li>
+  <li>Comprehensive mobile-first utility system</li>
+  <li>All components follow Bootstrap 5 conventions</li>
+  <li>Dark mode implementation ready for testing</li>
+  <li>Accessibility features follow WCAG guidelines</li>
+  <li>Print styles have been optimized</li>
+  <li>Reduced motion preferences respected</li>
+</ul>
+
+<h3 id="technical-decisions">Technical Decisions</h3>
+<ol>
+  <li>Layout System=
+    <ul>
+      <li>Used CSS Grid for main layouts</li>
+      <li>Implemented flexible container system</li>
+      <li>Created responsive breakpoint system</li>
+      <li>Added support for complex grid patterns</li>
+    </ul>
+  </li>
+  <li>Transitions=
+    <ul>
+      <li>Standardized transition timings</li>
+      <li>Created reusable animation patterns</li>
+      <li>Implemented accessibility considerations</li>
+      <li>Added performance optimizations</li>
+    </ul>
+  </li>
+  <li>Utilities=
+    <ul>
+      <li>Mobile-first approach throughout</li>
+      <li>Consistent naming conventions</li>
+      <li>Responsive class modifiers</li>
+      <li>Screen reader considerations</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Last Updated=October 8, 2025</p>
+
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer bg-light mt-5 py-4">
+        <div class="container">
+            <div class="row g-4">
+                <!-- About -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Um síðuna</h5>
+                    <address class="mb-3">
+                        <strong>Mannkostamenntun</strong><br>
+                        Ábyrgðarmaður=Kristian Guttesen<br>
+                        Norðurslóð 2, 600 Akureyri<br>
+                        <i class="fas fa-phone"></i> (+354) 460-8597<br>
+                        <i class="fas fa-envelope"></i> guttesen@hotmail.com
+                    </address>
+                </div>
+
+                <!-- Links -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Hlekkir</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https=//heimspekitorg.is/">Félag heimspekikennara</a></li>
+                        <li><a href="https=//heimspekismidja.wordpress.com/">Sísyfos heimspekismiðja</a></li>
+                        <li><a href="/pdf/68-æfingar-í-heimspeki.pdf">68 æfingar í heimspeki</a></li>
+                        <li><a href="https=//heimspeki.hi.is/about/ritgerðir/">Heimspekivefurinn</a></li>
+                        <li><a href="https=//verkefnabanki.wordpress.com/">Verkefnabanki Heimspekitorgsins</a></li>
+                    </ul>
+                </div>
+
+                <!-- Latest Posts -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Nýjustu færslur</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/creation.html">Um tilurð þessarar síðu</a></li>
+                        <li><a href="/kristian_guttesen_cv.html">Um síðuhöfundinn</a></li>
+                        <li><a href="#">Heimildir</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div class="col-lg-3 col-md-6">
+                    <h5>Samfélagsmiðlar</h5>
+                    <ul class="list-inline social-links">
+                        <li class="list-inline-item">
+                            <a href="https=//www.facebook.com/kristian.guttesen/" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//x.com/guttesen" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//www.linkedin.com/in/kristian-guttesen/" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https=//www.pinterest.com/kguttesen/" aria-label="Pinterest">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-top mt-4 pt-3">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-0">&copy; 2025 Kristian Guttesen. Allur réttur áskilinn.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="mb-0 text-muted">Sniðmát smíðað af <a href="http=//webthemez.com">WebThemez</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="btn btn-primary btn-sm position-fixed bottom-0 end-0 mb-3 me-3 rounded-circle d-none" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Core JavaScript -->
+    <script src="https=//cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
