@@ -10,9 +10,11 @@
 ## Navigation
 
 ### Usage
+{% raw %}
 ```html
 {% include nav.html activeItem='home' showLanguageSwitcher='true' %}
 ```
+{% endraw %}
 
 ### Properties
 - `activeItem`=Current page identifier
@@ -27,9 +29,11 @@
 ## Hero Section
 
 ### Usage
+{% raw %}
 ```html
 {% include hero.html title='Main Title' subtitle='Optional subtitle' background='/path/to/image.jpg' ctaText='Learn More' ctaUrl='/learn-more' %}
 ```
+{% endraw %}
 
 ### Properties
 - `title`=Main heading (required)
@@ -47,9 +51,11 @@
 ## Cards
 
 ### Usage
+{% raw %}
 ```html
 {% include card.html title='Card Title' content='Card content here' image='/path/to/image.jpg' imageAlt='Description of image' link='/card-link' %}
 ```
+{% endraw %}
 
 ### Properties
 - `title`=Card heading
@@ -67,9 +73,11 @@
 ## Forms
 
 ### Usage
+{% raw %}
 ```html
 {% include contact-form.html submitUrl='/api/contact' successMessage='Message sent!' errorMessage='Please try again' %}
 ```
+{% endraw %}
 
 ### Properties
 - `submitUrl`=Form submission endpoint
@@ -91,9 +99,11 @@
 ## Language Switcher
 
 ### Usage
+{% raw %}
 ```html
 {% include language-switcher.html currentLang='is' languages='languages.yml' %}
 ```
+{% endraw %}
 
 ### Properties
 - `currentLang`=Current language code
